@@ -1,0 +1,48 @@
+# docker compose up                      → Beacon Lite + Ollama (H2 database in a volume)
+# docker compose --profile postgres up   → also PostgreSQL; set SPRING_PROFILES_ACTIVE=live,postgres in .env
+# First run: docker compose exec ollama ollama pull qwen2.5:7b
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8080:8080"   # local only, as in the default config
+    environment:
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-live}
+      BEACON_LLM_BASE_URL: http://ollama:11434/v1
+      BEACON_LLM_API_KEY: ${BEACON_LLM_API_KEY:-}
+      BEACON_DB_URL: jdbc:postgresql://postgres:5432/beacon
+      BEACON_DB_USER: ${BEACON_DB_USER:-beacon}
+      BEACON_DB_PASSWORD: ${BEACON_DB_PASSWORD:-beacon}
+    volumes:
+      - beacon-data:/app/data
+    restart: unless-stopped
+    depends_on:
+      ollama:
+        condition: service_started
+      postgres:
+        condition: service_healthy
+        required: false   # only waited for when the postgres profile is on
+
+  ollama:
+    image: ollama/ollama
+    volumes:
+      - ollama-models:/root/.ollama
+
+  postgres:
+    image: postgres:16
+    profiles: ["postgres"]
+    environment:
+      POSTGRES_DB: beacon
+      POSTGRES_USER: ${BEACON_DB_USER:-beacon}
+      POSTGRES_PASSWORD: ${BEACON_DB_PASSWORD:-beacon}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d beacon"]
+      interval: 5s
+      retries: 12
+    volumes:
+      - beacon-pg:/var/lib/postgresql/data
+
+volumes:
+  beacon-data:
+  ollama-models:
+  beacon-pg:

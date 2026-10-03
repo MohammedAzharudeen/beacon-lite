@@ -1,6 +1,5 @@
 target/
 data/
-reports/*.html
 .bootstrap/
 frontend/node/
 frontend/node_modules/
@@ -10,3 +9,4 @@ frontend/dist/
 .vscode/
 *.iml
 .DS_Store
+__pycache__/

@@ -1,0 +1,10 @@
+target
+data
+.bootstrap
+frontend/node
+frontend/node_modules
+frontend/dist
+.git
+.idea
+.vscode
+reports

@@ -1,6 +1,6 @@
 # Coding Standards
 
-Applies to every change in Beacon Lite. Derived from the DEVSPEC (`docs/technical-specs/beacon-lite/DEVSPEC_beacon-lite_v1.md`, Sections 6, 7, 8, 10, 17.4) and the quality standards. CI fails if a rule marked **(enforced)** is broken.
+Applies to every change in Beacon Lite. CI fails if a rule marked **(enforced)** is broken.
 
 ## 1. Project structure
 
@@ -11,7 +11,7 @@ beacon-lite/
 ├── docs/                                      Standards, Part 2/3 docs, technical specs
 ├── reports/                                   Committed sample Insight Brief
 ├── scripts/                                   One-off developer scripts
-├── src/main/java/com/beacon/<feature>/        Package by feature (DEVSPEC 6): config, security, fetch,
+├── src/main/java/com/beacon/<feature>/        Package by feature: config, security, fetch,
 │                                              robots, adapter, store, snapshot, catalog, diff, job, size,
 │                                              insight, journey, action, intent, chat, web, cli, common
 ├── src/main/resources/                        application.yml, db/changelog/, prompts/, snapshots/
@@ -83,4 +83,4 @@ beacon-lite/
 - [ ] Formatted (Spotless, Prettier) and type-checked
 - [ ] Tests added/updated and passing
 - [ ] No hard-coded assumptions; new judgment calls added to `assumptions.yml`
-- [ ] Matches the DEVSPEC; any deviation recorded in its Change Log first
+- [ ] README, user guide and API docs updated when behaviour changes
