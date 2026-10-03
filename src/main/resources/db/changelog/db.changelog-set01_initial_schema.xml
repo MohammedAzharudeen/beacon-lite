@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Initial schema (DEVSPEC Section 4). Types are portable between H2 (PostgreSQL mode) and PostgreSQL. -->
+<!-- Initial schema. Types are portable between H2 (PostgreSQL mode) and PostgreSQL. -->
 <databaseChangeLog
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

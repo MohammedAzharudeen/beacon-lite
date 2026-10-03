@@ -1,0 +1,88 @@
+# Every judgment call Beacon Lite makes, in one place.
+# The SHA-256 of this file is the "assumptionsVersion" stored with every report, so any number
+# can be traced back to the exact values that produced it. Edit, restart, rescan.
+
+# Core sizes: the middle part of a product's sorted size run (fit sizes only).
+coreSizes:
+  rule: middle-percent
+  percent: 50
+
+# Items that only look sold out, or aren't physical stock (matched case-insensitively).
+exclusions:
+  preOrderTags: [pre-order, preorder, coming soon, coming-soon, purple-dot]
+  backOrderTags: [back-order, backorder]
+  nonPhysicalTypes: [gift card, gift cards, gift-card, gwp, membership, sgdonation, trashie]
+  bundleTypes: [bundle, bundles]
+  # Likely discontinued = every variant sold out + not in a best-seller collection + was discounted.
+  likelyDiscontinued: { fullySoldOut: true, notInBestSellerCollection: true, wasDiscounted: true }
+
+# Store collections treated as the store's own best-seller list (handle match).
+# The best-selling sort order is never used (blocked by robots.txt on the stores checked).
+bestSellerCollectionPattern: "best-seller|bestseller|best-of|top-sell"
+
+# Demand model behind restock priority and $ at risk (all estimates, labelled as such).
+demand:
+  weeklyDemandBaselineUnits: 20          # units/week at demand score 1.0, linear
+  signalWeights:
+    bestSellerCollection: 0.35
+    promoted: 0.15
+    sellOutSpeed: 0.30
+    fullPrice: 0.10
+    recentlyLaunched: 0.10
+  recentlyLaunchedDays: 30
+  confidence: { high: 3, medium: 2 }     # number of demand signals available
+
+# Size gap weighting: core sizes count more than edge sizes.
+gapWeights: { core: 2.0, edge: 1.0 }
+
+# How many pages are sampled per scan.
+samples:
+  soldOutProductPages: 5
+  altTextProducts: 30
+  featuredCollections: 30
+  featuredCollectionPages: 4
+  footerPages: 6
+  genericProductPages: 200
+
+# Search test terms: the store's most common product types.
+search: { termSource: top-product-types, termCount: 5 }
+
+# Catalog quality thresholds.
+catalog: { minImages: 3, thinDescriptionChars: 100, thinTitleChars: 15 }
+
+# Pricing thresholds.
+pricing:
+  deepDiscountPercent: 50
+  deadStock: { publishedOlderThanDays: 180, discountAtLeastPercent: 30 }
+
+# Home page: below this many product links, links are assumed to load via JavaScript.
+signals: { minHomeLinks: 10 }
+
+# Journey scorecard: each banded check scores 100 at "best", 0 at "worst", linear in between.
+journeyThresholds:
+  homePageBytes: { best: 500000, worst: 3000000 }
+  homePageScripts: { best: 30, worst: 200 }
+  variantsSoldOutPercent: { best: 5, worst: 50 }
+  coreSizeGapPercent: { best: 5, worst: 50 }
+  freeShippingToMedianPriceRatio: { best: 1.0, worst: 3.0 }
+  returnsWindowDays: { best: 30, worst: 7 }
+
+# Text and script patterns used to detect storefront features in page HTML (regex, case-insensitive).
+detection:
+  shopifyMarkers: "cdn\\.shopify\\.com|Shopify\\.theme|myshopify\\.com"
+  # Bot-protection pages (e.g. Cloudflare "Just a moment..."): Beacon Lite stops, never works around them
+  botProtection: "_cf_chl_opt|challenge-platform|Just a moment\\.\\.\\.|captcha"
+  apps:
+    SWYM: "swymcdn|swym-|swymJsonp|swym\\.it"
+    KLAVIYO: "klaviyo"
+    AFTERPAY: "afterpay"
+    KLARNA: "klarna"
+    SHOP_PAY: "shop-pay|shop_pay|shopPay"
+    REVIEWS: "yotpo|judge\\.me|judgeme|okendo|stamped\\.io|loox|reviews\\.io|junip|bazaarvoice|powerreviews"
+  wishlistApps: [SWYM]
+  emailCaptureApps: [KLAVIYO]
+  bnplApps: [AFTERPAY, KLARNA]
+  notifyMeText: "notify me|email me when available|email when available|back in stock alert|get notified"
+  sizeGuideText: "size guide|size chart|sizing guide|fit guide"
+  returnsPages: "return|refund|exchange"
+  shippingPages: "shipping|delivery"

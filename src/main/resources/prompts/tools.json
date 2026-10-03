@@ -1,0 +1,46 @@
+[
+  {"name": "get_store_overview",
+   "description": "Headline insight, key numbers (share of sizes sold out, estimated $ at risk per week, journey score, changes since the last check), catalog size and data notes.",
+   "parameters": {"type": "object", "properties": {}}},
+  {"name": "get_restock_priorities",
+   "description": "Products to restock first, ranked by estimated $ at risk per week (Demand x Gap x Value), with sold-out sizes, demand signals and confidence.",
+   "parameters": {"type": "object", "properties": {
+     "limit": {"type": "integer", "minimum": 1, "maximum": 20, "description": "How many products (default 5)"},
+     "category": {"type": "string", "description": "Product type to filter on, e.g. boots or dresses"}}}},
+  {"name": "get_size_gaps",
+   "description": "Products whose core (middle) sizes are sold out while other sizes are in stock, with the missing sizes.",
+   "parameters": {"type": "object", "properties": {
+     "limit": {"type": "integer", "minimum": 1, "maximum": 20},
+     "category": {"type": "string"}}}},
+  {"name": "get_promoted_sold_outs",
+   "description": "Fully sold-out products the store still promotes (home page links, best-seller or featured collections).",
+   "parameters": {"type": "object", "properties": {}}},
+  {"name": "get_journey_friction",
+   "description": "Shopper journey scorecard: six stages with scores, each check's status, evidence and suggested fix. Checks blocked by robots.txt are marked not checked.",
+   "parameters": {"type": "object", "properties": {
+     "stage": {"type": "string", "enum": ["DISCOVER", "BROWSE", "PRODUCT_PAGE", "SIZE_STOCK", "CART_CHECKOUT", "COME_BACK"]}}}},
+  {"name": "get_recent_changes",
+   "description": "What changed between the last two checks: sizes that sold out or came back, price changes, products added or removed, with the time window.",
+   "parameters": {"type": "object", "properties": {
+     "type": {"type": "string", "enum": ["SOLD_OUT", "RESTOCKED", "PRICE_CHANGED", "PRODUCT_ADDED", "PRODUCT_REMOVED"]}}}},
+  {"name": "get_pricing_insights",
+   "description": "Compare-at price equal to selling price, discount depth, deep discounts, dead stock and the free-shipping threshold against the median price.",
+   "parameters": {"type": "object", "properties": {}}},
+  {"name": "search_products",
+   "description": "Search the latest catalog by name, product type, price range, stock, size or discount.",
+   "parameters": {"type": "object", "properties": {
+     "query": {"type": "string"},
+     "category": {"type": "string"},
+     "min_price": {"type": "number"},
+     "max_price": {"type": "number"},
+     "in_stock": {"type": "boolean"},
+     "size": {"type": "string", "description": "A size label such as 9 or M; matches products where that size is available"},
+     "discounted": {"type": "boolean"}}}},
+  {"name": "get_catalog_health",
+   "description": "Catalog quality: products with few images, sampled image alt text, short descriptions, missing or inconsistent product types, spreadsheet errors.",
+   "parameters": {"type": "object", "properties": {}}},
+  {"name": "compare_stores",
+   "description": "Side-by-side key numbers for the tracked stores, using only checks that ran on every compared store.",
+   "parameters": {"type": "object", "properties": {
+     "store_ids": {"type": "array", "items": {"type": "integer"}}}}}
+]

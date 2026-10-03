@@ -1,0 +1,213 @@
+{
+ "host": "www.stevemadden.com",
+ "userAgent": "BeaconLite/1.0 (+contact in README)",
+ "products": 2512,
+ "bestSellerCollections": [
+  "bags-accessories-bestsellers",
+  "best-sellers-all-products",
+  "clothing-best-sellers",
+  "kids-best-sellers",
+  "mens-best-sellers",
+  "womens-best-sellers-2"
+ ],
+ "featuredCollections": [
+  "womens-all-products",
+  "buy-with-prime",
+  "womens-new-arrivals",
+  "womens-heels",
+  "loafers-flats",
+  "womens-boots",
+  "womens-booties",
+  "womens-sneakers",
+  "womens-sandals",
+  "womens-wedges",
+  "strappy-sandals-heels",
+  "wide-calf-boots",
+  "boots-booties",
+  "trends-slides",
+  "womens-platforms",
+  "trends-mules",
+  "make-it-a-match",
+  "mini-me",
+  "bundles",
+  "the-it-list",
+  "mens-all-products",
+  "mens-new-arrivals",
+  "mens-boots",
+  "mens-sneakers",
+  "mens-loafers",
+  "mens-sandals-slides",
+  "mens-casual",
+  "mens-dress-shoes",
+  "his-hers",
+  "fall-outfits-mens"
+ ],
+ "footerPages": [
+  "shippingpolicy"
+ ],
+ "searchTerms": [
+  "women's shoes",
+  "women's clothing",
+  "men's shoes",
+  "handbags",
+  "accessories"
+ ],
+ "requests": [
+  {
+   "path": "/robots.txt",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "text/plain; charset=utf-8",
+   "bytes": 3638,
+   "ms": 431,
+   "file": "robots.txt.gz"
+  },
+  {
+   "path": "/products.json?limit=250&page=1",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 2999601,
+   "ms": 985,
+   "file": "products-page-001.gz"
+  },
+  {
+   "path": "/collections.json?limit=250&page=1",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 493202,
+   "ms": 691,
+   "file": "collections-page-001.gz"
+  },
+  {
+   "path": "/collections.json?limit=250&page=2",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 314892,
+   "ms": 695,
+   "file": "collections-page-002.gz"
+  },
+  {
+   "path": "/collections/best-sellers-all-products/products.json?limit=250&page=1",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 3497908,
+   "ms": 1097,
+   "file": "collection-best-sellers-all-products-page-001.gz"
+  },
+  {
+   "path": "/collections/best-sellers-all-products/products.json?limit=250&page=2",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 1446262,
+   "ms": 607,
+   "file": "collection-best-sellers-all-products-page-002.gz"
+  },
+  {
+   "path": "/collections/best-sellers-all-products/products.json?limit=250&page=3",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 15,
+   "ms": 260,
+   "file": "collection-best-sellers-all-products-page-003.gz"
+  },
+  {
+   "path": "/",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "text/html; charset=utf-8",
+   "bytes": 1060886,
+   "ms": 642,
+   "file": "home.html.gz"
+  },
+  {
+   "path": "/policies/refund-policy",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "text/html; charset=utf-8",
+   "bytes": 974877,
+   "ms": 704,
+   "file": "policy-refund.html.gz"
+  },
+  {
+   "path": "/policies/shipping-policy",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "text/html; charset=utf-8",
+   "bytes": 978506,
+   "ms": 578,
+   "file": "policy-shipping.html.gz"
+  },
+  {
+   "path": "/search/suggest.json?q=women%27s%20shoes&resources%5Btype%5D=product",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 27427,
+   "ms": 348,
+   "file": "search-1.gz"
+  },
+  {
+   "path": "/products/mona-bone-leather",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "text/html; charset=utf-8",
+   "bytes": 1889712,
+   "ms": 991,
+   "file": "product-page-mona-bone-leather.html.gz"
+  },
+  {
+   "path": "/products/lanti-black-leather.json",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 13593,
+   "ms": 244,
+   "file": "product-json-lanti-black-leather.gz"
+  },
+  {
+   "path": "/products/listen-black-satin.json",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 13778,
+   "ms": 285,
+   "file": "product-json-listen-black-satin.gz"
+  },
+  {
+   "path": "/products/vickee-black-mesh.json",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 13115,
+   "ms": 260,
+   "file": "product-json-vickee-black-mesh.gz"
+  },
+  {
+   "path": "/products.json?limit=250&page=2",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 15,
+   "ms": 299,
+   "file": "products-page-012.gz",
+   "note": "recorded as /products.json?limit=250&page=12"
+  },
+  {
+   "path": "/products.json?limit=1",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 2999601,
+   "ms": 985,
+   "file": "products-page-001.gz",
+   "note": "recorded as /products.json?limit=250&page=1"
+  }
+ ],
+ "trimmed": "Subset of the full recording for adapter tests; see ../../README.md"
+}

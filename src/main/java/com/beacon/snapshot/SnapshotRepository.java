@@ -9,6 +9,9 @@ public interface SnapshotRepository extends JpaRepository<Snapshot, Long> {
   Optional<Snapshot> findTopByStoreIdAndStatusOrderByStartedAtDesc(
       Long storeId, SnapshotStatus status);
 
+  /** The most recent snapshot of any status (shows "Last refresh failed"). */
+  Optional<Snapshot> findTopByStoreIdOrderByStartedAtDesc(Long storeId);
+
   /** Oldest first; used for retention and KPI trends. */
   List<Snapshot> findByStoreIdAndStatusOrderByStartedAtAsc(Long storeId, SnapshotStatus status);
 }

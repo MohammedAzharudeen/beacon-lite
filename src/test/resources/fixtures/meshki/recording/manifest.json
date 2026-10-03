@@ -1,0 +1,68 @@
+{
+ "host": "www.meshki.us",
+ "userAgent": "BeaconLite/1.0 (+contact in README)",
+ "products": 0,
+ "bestSellerCollections": [],
+ "featuredCollections": [],
+ "footerPages": [],
+ "searchTerms": [],
+ "requests": [
+  {
+   "path": "/robots.txt",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "text/plain; charset=utf-8",
+   "bytes": 5428,
+   "ms": 304,
+   "file": "robots.txt.gz"
+  },
+  {
+   "path": "/products.json?limit=250&page=1",
+   "robots": "ALLOWED",
+   "status": 403,
+   "contentType": "text/html; charset=UTF-8",
+   "bytes": 5609,
+   "ms": 83,
+   "file": "products-page-001.gz"
+  },
+  {
+   "path": "/collections.json?limit=250&page=1",
+   "robots": "ALLOWED",
+   "status": 403,
+   "contentType": "text/html; charset=UTF-8",
+   "bytes": 5639,
+   "ms": 95,
+   "file": "collections-page-001.gz"
+  },
+  {
+   "path": "/",
+   "robots": "ALLOWED",
+   "status": 403,
+   "contentType": "text/html; charset=UTF-8",
+   "bytes": 5446,
+   "ms": 93,
+   "file": "home.html.gz"
+  },
+  {
+   "path": "/policies/refund-policy",
+   "robots": "DISALLOWED",
+   "rule": "/policies/"
+  },
+  {
+   "path": "/policies/shipping-policy",
+   "robots": "DISALLOWED",
+   "rule": "/policies/"
+  },
+  {
+   "path": "/products.json?limit=1",
+   "robots": "ALLOWED",
+   "status": 403,
+   "contentType": "text/html; charset=UTF-8",
+   "bytes": 5609,
+   "ms": 83,
+   "file": "products-page-001.gz",
+   "note": "recorded as /products.json?limit=250&page=1"
+  }
+ ],
+ "trimmed": "Full recording plus the detection path; see ../../README.md"
+}

@@ -1,5 +1,6 @@
 package com.beacon.common;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Objects;
@@ -11,7 +12,8 @@ import java.util.Objects;
  * @param amount the value, kept at two decimal places
  * @param currency ISO 4217 code such as {@code USD}, or {@code null} when unknown
  */
-public record Money(BigDecimal amount, String currency) {
+public record Money(
+    @JsonFormat(shape = JsonFormat.Shape.STRING) BigDecimal amount, String currency) {
 
   public Money {
     Objects.requireNonNull(amount, "amount");

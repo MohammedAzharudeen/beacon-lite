@@ -1,15 +1,85 @@
 server:
-  address: 127.0.0.1
+  address: 127.0.0.1          # localhost only; change deliberately to expose
   port: 8080
+  shutdown: graceful
 
 spring:
   application:
     name: beacon-lite
   datasource:
-    url: jdbc:h2:file:./data/beacon-db;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    url: jdbc:h2:file:./data/beacon-db;MODE=PostgreSQL
   jpa:
     hibernate:
       ddl-auto: validate
     open-in-view: false
+    properties:
+      hibernate:
+        jdbc.batch_size: 500
+        order_inserts: true
+        order_updates: true
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml
+  lifecycle:
+    timeout-per-shutdown-phase: 60s
+
+logging:
+  pattern:
+    level: "%5p [store=%X{storeId:-} job=%X{jobId:-}]"
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+beacon:
+  assumptions-file: ./config/assumptions.yml
+  seed-demo-stores: true
+  demo-stores: www.stevemadden.com, www.reebok.com, petalandpup.com
+  fetch:
+    user-agent: "BeaconLite/1.0 (+contact in README)"
+    delay: 500ms
+    connect-timeout: 10s
+    read-timeout: 30s
+    max-attempts: 3
+    max-response-bytes: 20971520
+    max-redirects: 5
+    max-retry-after: 30s
+  snapshot:
+    interval: 6h
+    dir: ./data/snapshots
+    keep-all-days: 7
+  llm:
+    provider: ollama
+    base-url: http://localhost:11434/v1
+    model: qwen2.5:7b
+    api-key: ${BEACON_LLM_API_KEY:}
+    timeout: 60s
+    max-tool-calls: 4
+
+---
+# Recorded snapshots only; no network
+spring:
+  config:
+    activate:
+      on-profile: demo
+beacon:
+  demo: true
+  snapshot:
+    scheduler-enabled: false
+
+---
+# Live stores (the default behaviour; named for clarity in run commands)
+spring:
+  config:
+    activate:
+      on-profile: live
+
+---
+# PostgreSQL instead of H2 (docker compose --profile postgres)
+spring:
+  config:
+    activate:
+      on-profile: postgres
+  datasource:
+    url: ${BEACON_DB_URL:jdbc:postgresql://localhost:5432/beacon}
+    username: ${BEACON_DB_USER:beacon}
+    password: ${BEACON_DB_PASSWORD:beacon}

@@ -13,7 +13,7 @@ import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import java.time.Instant;
 
-/** A tracked store (DEVSPEC 4.2). */
+/** A tracked store. */
 @Entity
 @Table(name = "store")
 public class Store {
@@ -75,6 +75,14 @@ public class Store {
     this.currentSnapshotId = snapshotId;
     this.currency = currency;
     this.status = StoreStatus.ACTIVE;
+  }
+
+  /** Uses the store's own name (from its home page) once it is known. */
+  public void rename(String newDisplayName) {
+    if (newDisplayName != null && !newDisplayName.isBlank()) {
+      this.displayName =
+          newDisplayName.length() > 255 ? newDisplayName.substring(0, 255) : newDisplayName;
+    }
   }
 
   /** Marks the first scan as failed; stores with an earlier good snapshot stay active. */

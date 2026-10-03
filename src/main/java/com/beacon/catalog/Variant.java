@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
 
-/** Latest known state of a variant (DEVSPEC 4.5). Matched across snapshots by external id. */
+/** Latest known state of a variant. Matched across snapshots by external id. */
 @Entity
 @Table(name = "variant")
 public class Variant {

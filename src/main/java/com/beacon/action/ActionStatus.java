@@ -12,7 +12,7 @@ import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import java.time.Instant;
 
-/** Merchant-set status of a recommended action (DEVSPEC 4.8). */
+/** Merchant-set status of a recommended action. */
 @Entity
 @Table(name = "action_status")
 public class ActionStatus {

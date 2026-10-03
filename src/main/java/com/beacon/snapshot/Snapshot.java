@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.time.Instant;
 
-/** One snapshot run of a store (DEVSPEC 4.3). */
+/** One snapshot run of a store. */
 @Entity
 @Table(name = "snapshot")
 public class Snapshot {
@@ -67,6 +67,11 @@ public class Snapshot {
     this.productCount = productCount;
     this.variantCount = variantCount;
     this.finishedAt = finishedAt;
+  }
+
+  /** Retention removed the raw file; the row stays so reports and trends keep their reference. */
+  public void clearRawFile() {
+    this.rawPath = null;
   }
 
   public void fail(String errorCode, String errorMessage, Instant finishedAt) {

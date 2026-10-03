@@ -5,13 +5,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import java.time.Instant;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 /**
- * A stored insight report (DEVSPEC 4.9). Keeps the snapshot id and assumptions version so every
- * number shown can be traced and recomputed.
+ * A stored insight report. Keeps the snapshot id and assumptions version so every number shown can
+ * be traced and recomputed.
  */
 @Entity
 @Table(name = "insight_report")
@@ -33,7 +34,9 @@ public class InsightReportEntity {
   @Column(name = "generated_at", nullable = false)
   private Instant generatedAt;
 
-  @Lob
+  // Long text, not @Lob: a LOB would become a PostgreSQL large object (oid). The column is CLOB on
+  // H2 and TEXT on PostgreSQL (Liquibase "CLOB"), both read and written as a plain string.
+  @JdbcTypeCode(SqlTypes.LONG32VARCHAR)
   @Column(nullable = false)
   private String payload;
 

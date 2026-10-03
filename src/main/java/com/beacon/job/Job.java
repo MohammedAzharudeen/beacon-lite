@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 import java.time.Instant;
 import java.util.UUID;
 
-/** A background snapshot job with progress shown in the UI (DEVSPEC 4.7). */
+/** A background snapshot job with progress shown in the UI. */
 @Entity
 @Table(name = "job")
 public class Job {

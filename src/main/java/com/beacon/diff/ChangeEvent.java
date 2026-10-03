@@ -11,8 +11,8 @@ import jakarta.persistence.Table;
 import java.time.Instant;
 
 /**
- * A change between two snapshots (DEVSPEC 4.6). Timing is the window between the two snapshots,
- * never an exact time: store timestamps reflect bulk syncs.
+ * A change between two snapshots. Timing is the window between the two snapshots, never an exact
+ * time: store timestamps reflect bulk syncs.
  */
 @Entity
 @Table(name = "change_event")

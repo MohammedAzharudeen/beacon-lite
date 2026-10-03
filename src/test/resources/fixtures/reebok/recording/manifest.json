@@ -1,0 +1,202 @@
+{
+ "host": "www.reebok.com",
+ "userAgent": "BeaconLite/1.0 (+contact in README)",
+ "products": 1361,
+ "bestSellerCollections": [
+  "best-sellers",
+  "fathers-day-deals-best-sellers",
+  "kids-best-sellers",
+  "mens-best-sellers"
+ ],
+ "featuredCollections": [
+  "classics-shoes",
+  "classics-clearance-event",
+  "reebok-x-manors",
+  "new-arrivals",
+  "angel-reese",
+  "f45-training-products",
+  "walking-shoes",
+  "ltd-collection",
+  "sport-style",
+  "new-arrivals-clothing",
+  "collaborations",
+  "nano",
+  "floatzig-shoes",
+  "freestyle",
+  "workout-plus",
+  "club-c-shoes",
+  "classic-leather-shoes",
+  "engine-a",
+  "pump-collection",
+  "classic-az",
+  "classics-apparel",
+  "low-profile",
+  "mens-classics",
+  "womens-classics",
+  "kids-classics",
+  "animal-print",
+  "maximalist-moments",
+  "minimalist-moves",
+  "90s-styles",
+  "spring-colors"
+ ],
+ "footerPages": [
+  "shipping-delivery",
+  "returns-exchanges"
+ ],
+ "searchTerms": [
+  "shoes",
+  "t-shirts",
+  "hats",
+  "pants",
+  "shorts"
+ ],
+ "requests": [
+  {
+   "path": "/robots.txt",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "text/plain; charset=utf-8",
+   "bytes": 5513,
+   "ms": 310,
+   "file": "robots.txt.gz"
+  },
+  {
+   "path": "/products.json?limit=250&page=1",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 4213454,
+   "ms": 1399,
+   "file": "products-page-001.gz"
+  },
+  {
+   "path": "/collections.json?limit=250&page=1",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 116714,
+   "ms": 787,
+   "file": "collections-page-001.gz"
+  },
+  {
+   "path": "/collections/best-sellers/products.json?limit=250&page=1",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 1475953,
+   "ms": 559,
+   "file": "collection-best-sellers-page-001.gz"
+  },
+  {
+   "path": "/collections/best-sellers/products.json?limit=250&page=2",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 15,
+   "ms": 278,
+   "file": "collection-best-sellers-page-002.gz"
+  },
+  {
+   "path": "/",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "text/html; charset=utf-8",
+   "bytes": 1582453,
+   "ms": 389,
+   "file": "home.html.gz"
+  },
+  {
+   "path": "/policies/refund-policy",
+   "robots": "DISALLOWED",
+   "rule": "/policies/"
+  },
+  {
+   "path": "/policies/shipping-policy",
+   "robots": "DISALLOWED",
+   "rule": "/policies/"
+  },
+  {
+   "path": "/pages/shipping-delivery",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "text/html; charset=utf-8",
+   "bytes": 1439493,
+   "ms": 667,
+   "file": "page-shipping-delivery.html.gz"
+  },
+  {
+   "path": "/pages/returns-exchanges",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "text/html; charset=utf-8",
+   "bytes": 1455224,
+   "ms": 572,
+   "file": "page-returns-exchanges.html.gz"
+  },
+  {
+   "path": "/search/suggest.json?q=shoes&resources%5Btype%5D=product",
+   "robots": "DISALLOWED",
+   "rule": "/search"
+  },
+  {
+   "path": "/search/suggest.json?q=t-shirts&resources%5Btype%5D=product",
+   "robots": "DISALLOWED",
+   "rule": "/search"
+  },
+  {
+   "path": "/search/suggest.json?q=hats&resources%5Btype%5D=product",
+   "robots": "DISALLOWED",
+   "rule": "/search"
+  },
+  {
+   "path": "/search/suggest.json?q=pants&resources%5Btype%5D=product",
+   "robots": "DISALLOWED",
+   "rule": "/search"
+  },
+  {
+   "path": "/search/suggest.json?q=shorts&resources%5Btype%5D=product",
+   "robots": "DISALLOWED",
+   "rule": "/search"
+  },
+  {
+   "path": "/products/reebok-premier-road-ultra-shoes-black-metallic",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "text/html; charset=utf-8",
+   "bytes": 1907587,
+   "ms": 843,
+   "file": "product-page-reebok-premier-road-ultra-shoes-black-metallic.html.gz"
+  },
+  {
+   "path": "/products/reebok-womens-gl1100-shoes-chalk-beige-tan-146443.json",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 12917,
+   "ms": 319,
+   "file": "product-json-reebok-womens-gl1100-shoes-chalk-beige-tan-146443.gz"
+  },
+  {
+   "path": "/products.json?limit=250&page=2",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 15,
+   "ms": 342,
+   "file": "products-page-007.gz",
+   "note": "recorded as /products.json?limit=250&page=7"
+  },
+  {
+   "path": "/products.json?limit=1",
+   "robots": "ALLOWED",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "bytes": 4213454,
+   "ms": 1399,
+   "file": "products-page-001.gz",
+   "note": "recorded as /products.json?limit=250&page=1"
+  }
+ ],
+ "trimmed": "Subset of the full recording for adapter tests; see ../../README.md"
+}

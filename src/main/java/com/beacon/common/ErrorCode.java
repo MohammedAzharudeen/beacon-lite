@@ -3,8 +3,8 @@ package com.beacon.common;
 import org.springframework.http.HttpStatus;
 
 /**
- * Every error the API or a job can report (DEVSPEC Section 9.1). Each carries the HTTP status used
- * when it reaches a client, a user-facing message and a hint telling the user what to do next.
+ * Every error the API or a job can report. Each carries the HTTP status used when it reaches a
+ * client, a user-facing message and a hint telling the user what to do next.
  */
 public enum ErrorCode {
   INVALID_INPUT(HttpStatus.BAD_REQUEST, "Validation failed", "Check the highlighted fields"),
@@ -29,6 +29,10 @@ public enum ErrorCode {
       HttpStatus.UNPROCESSABLE_ENTITY,
       "This Shopify store uses a custom storefront that doesn't publish its catalog",
       "Try a standard Shopify store such as stevemadden.com"),
+  STORE_BLOCKS_AUTOMATION(
+      HttpStatus.UNPROCESSABLE_ENTITY,
+      "This store blocks automated tools",
+      "It shows a bot check, which Beacon Lite respects and never works around; try another store"),
   STORE_NOT_REACHABLE(
       HttpStatus.BAD_GATEWAY, "The store didn't respond", "Check the address and try again later"),
   STORE_RATE_LIMITED(

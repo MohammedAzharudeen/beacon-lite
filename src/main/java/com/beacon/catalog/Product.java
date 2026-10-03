@@ -8,11 +8,12 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import java.time.Instant;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
-/** Latest known state of a product (DEVSPEC 4.4). Matched across snapshots by external id. */
+/** Latest known state of a product. Matched across snapshots by external id. */
 @Entity
 @Table(name = "product")
 public class Product {
@@ -38,7 +39,9 @@ public class Product {
 
   private String vendor;
 
-  @Lob private String tags;
+  // Same mapping as InsightReportEntity.payload: CLOB on H2, TEXT on PostgreSQL
+  @JdbcTypeCode(SqlTypes.LONG32VARCHAR)
+  private String tags;
 
   @Column(name = "image_url")
   private String imageUrl;
