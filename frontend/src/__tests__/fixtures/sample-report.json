@@ -1,0 +1,1277 @@
+{
+  "storeId": 2,
+  "snapshotId": 1,
+  "domain": "www.reebok.com",
+  "assumptionsVersion": "83223d0a2078e7dba02ed205c2bd775a69f90e0d70610a082459924e086adb77",
+  "generatedAt": "2026-10-03T07:40:00Z",
+  "capturedAt": "2026-10-03T07:31:21Z",
+  "currency": "USD",
+  "catalog": {
+    "products": 1361,
+    "variants": 14820,
+    "capped": false,
+    "sampled": false
+  },
+  "categories": [
+    "Shoes",
+    "T-Shirts",
+    "Hats",
+    "Pants",
+    "Shorts",
+    "Hoodies",
+    "Polos",
+    "Sweatshirts",
+    "Sports Bras",
+    "Tank Tops",
+    "Leggings",
+    "Cleats",
+    "Socks",
+    "Jersey",
+    "Skirts",
+    "Smart Sunglasses",
+    "Jackets",
+    "Nutrition",
+    "Luggage",
+    "Shirts",
+    "Sandals",
+    "Smartwatches",
+    "Belts",
+    "Bundles",
+    "Dresses",
+    "Gift Card",
+    "Leggings & Tights",
+    "Smart Rings",
+    "Insurance",
+    "Membership",
+    "Sizing Kits",
+    "Tights"
+  ],
+  "headline": {
+    "text": "306 products are missing core sizes; 42 styles have only one size left. About 60,826 USD a week is at risk (estimate).",
+    "metric": 306,
+    "evidenceRef": "sizeGaps"
+  },
+  "kpis": {
+    "sizesSoldOutPct": 19.4,
+    "soldOutVariants": 2877,
+    "atRiskPerWeek": {
+      "amount": "60826.47",
+      "currency": "USD",
+      "estimate": true
+    },
+    "journeyScore": 79,
+    "changedSinceLastCheck": null
+  },
+  "topActions": [
+    {
+      "actionKey": "RESTOCK:product:10094578762032",
+      "rank": 1,
+      "title": "Restock Premier Road Ultra LTD Shoes, 16 sizes sold out",
+      "evidence": "1 of 17 sizes left · signals: promoted, full price, recently launched · confidence HIGH",
+      "category": "Restock",
+      "atRiskPerWeek": {
+        "amount": "1211.54",
+        "currency": "USD",
+        "estimate": true
+      },
+      "status": "TODO"
+    },
+    {
+      "actionKey": "RESTOCK:product:10023263895856",
+      "rank": 2,
+      "title": "Restock Premier Road Ultra Shoes, 15 sizes sold out",
+      "evidence": "0 of 15 sizes left · signals: promoted, full price, recently launched · confidence HIGH",
+      "category": "Restock",
+      "atRiskPerWeek": {
+        "amount": "1190.00",
+        "currency": "USD",
+        "estimate": true
+      },
+      "status": "TODO"
+    },
+    {
+      "actionKey": "RESTOCK:product:9670625624368",
+      "rank": 3,
+      "title": "Restock Nano X5 Training Shoes, 13 sizes sold out",
+      "evidence": "7 of 20 sizes left · signals: best seller collection, full price · confidence MEDIUM",
+      "category": "Restock",
+      "atRiskPerWeek": {
+        "amount": "924.00",
+        "currency": "USD",
+        "estimate": true
+      },
+      "status": "TODO"
+    },
+    {
+      "actionKey": "JOURNEY:WISHLIST_APP",
+      "rank": 4,
+      "title": "Add a wishlist so shoppers can save items and come back",
+      "evidence": "Wishlist: Not found in the home page or sampled product page HTML",
+      "category": "Come back",
+      "atRiskPerWeek": null,
+      "status": "TODO"
+    },
+    {
+      "actionKey": "PROMOTED_SOLD_OUT",
+      "rank": 5,
+      "title": "5 sold-out products are still promoted",
+      "evidence": "Linked from the home page or in best-seller / featured collections; hide them or add a \"notify me\" button",
+      "category": "Discovery",
+      "atRiskPerWeek": null,
+      "status": "TODO"
+    }
+  ],
+  "actions": [],
+  "restock": [
+    {
+      "productId": 10094578762032,
+      "title": "Premier Road Ultra LTD Shoes",
+      "productType": "Shoes",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/reebokpinnacle_2000306478082_1.jpg?v=1772630161",
+      "productUrl": "https://www.reebok.com/products/reebok-premier-road-ultra-tranquil-teal-warped-blue-pure-pink",
+      "sizes": [
+        {
+          "label": "M 4 / W 5.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 4.5 / W 6",
+          "available": true,
+          "core": false
+        },
+        {
+          "label": "M 5 / W 6.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 5.5 / W 7",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 6 / W 7.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 6.5 / W 8",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 7 / W 8.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 7.5 / W 9",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 8 / W 9.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 8.5 / W 10",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 9 / W 10.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 9.5 / W 11",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 10 / W 11.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 10.5 / W 12",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 11 / W 12.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 11.5 / W 13",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 12 / W 13.5",
+          "available": false,
+          "core": false
+        }
+      ],
+      "soldOutSizes": 16,
+      "totalSizes": 17,
+      "price": {
+        "amount": "180.00",
+        "currency": "USD"
+      },
+      "signals": ["PROMOTED", "FULL_PRICE", "RECENTLY_LAUNCHED"],
+      "demandScore": 0.35,
+      "gapScore": 0.962,
+      "atRiskPerWeek": {
+        "amount": "1211.54",
+        "currency": "USD",
+        "estimate": true
+      },
+      "confidence": "HIGH",
+      "swymSignalLabel": "Promoted by the store → wishlist adds per product; Full-price sell-through → wishlist-to-purchase conversion; Recently launched → early wishlist adds"
+    },
+    {
+      "productId": 10023263895856,
+      "title": "Premier Road Ultra Shoes",
+      "productType": "Shoes",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/Premier_Road_Ultra_Shoes_Black_Metallic_reebokpinnacle_2000294334117_1_910837cc-d1c2-42be-b17f-1cdcc7600b7f.jpg?v=1790169432",
+      "productUrl": "https://www.reebok.com/products/reebok-premier-road-ultra-shoes-black-metallic",
+      "sizes": [
+        {
+          "label": "M 5 / W 6.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 5.5 / W 7",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 6 / W 7.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 6.5 / W 8",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 7 / W 8.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 7.5 / W 9",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 8 / W 9.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 8.5 / W 10",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 9 / W 10.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 9.5 / W 11",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 10 / W 11.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 10.5 / W 12",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 11 / W 12.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 11.5 / W 13",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 12 / W 13.5",
+          "available": false,
+          "core": false
+        }
+      ],
+      "soldOutSizes": 15,
+      "totalSizes": 15,
+      "price": {
+        "amount": "170.00",
+        "currency": "USD"
+      },
+      "signals": ["PROMOTED", "FULL_PRICE", "RECENTLY_LAUNCHED"],
+      "demandScore": 0.35,
+      "gapScore": 1.0,
+      "atRiskPerWeek": {
+        "amount": "1190.00",
+        "currency": "USD",
+        "estimate": true
+      },
+      "confidence": "HIGH",
+      "swymSignalLabel": "Promoted by the store → wishlist adds per product; Full-price sell-through → wishlist-to-purchase conversion; Recently launched → early wishlist adds"
+    },
+    {
+      "productId": 9670625624368,
+      "title": "Nano X5 Training Shoes",
+      "productType": "Shoes",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100209365_SLC_eCom.jpg?v=1764594562",
+      "productUrl": "https://www.reebok.com/products/reebok-nano-x5-ftwr-white-black-reebok-rubber-gum-04-118837",
+      "sizes": [
+        {
+          "label": "M 4 / W 5",
+          "available": true,
+          "core": false
+        },
+        {
+          "label": "M 4.5 / W 5.5",
+          "available": true,
+          "core": false
+        },
+        {
+          "label": "M 5 / W 6",
+          "available": true,
+          "core": false
+        },
+        {
+          "label": "M 5.5 / W 6.5",
+          "available": true,
+          "core": false
+        },
+        {
+          "label": "M 6 / W 7",
+          "available": true,
+          "core": false
+        },
+        {
+          "label": "M 6.5 / W 7.5",
+          "available": true,
+          "core": true
+        },
+        {
+          "label": "M 7 / W 8",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 7.5 / W 8.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 8 / W 9",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 8.5 / W 9.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 9 / W 10",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 9.5 / W 10.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 10 / W 11",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 10.5 / W 11.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 11 / W 12",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 11.5 / W 12.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 12 / W 13",
+          "available": true,
+          "core": false
+        },
+        {
+          "label": "M 12.5 / W 13.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 13 / W 14",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 14 / W 15",
+          "available": false,
+          "core": false
+        }
+      ],
+      "soldOutSizes": 13,
+      "totalSizes": 20,
+      "price": {
+        "amount": "140.00",
+        "currency": "USD"
+      },
+      "signals": ["BEST_SELLER_COLLECTION", "FULL_PRICE"],
+      "demandScore": 0.45,
+      "gapScore": 0.733,
+      "atRiskPerWeek": {
+        "amount": "924.00",
+        "currency": "USD",
+        "estimate": true
+      },
+      "confidence": "MEDIUM",
+      "swymSignalLabel": "Best-seller collection → wishlist adds per product; Full-price sell-through → wishlist-to-purchase conversion"
+    }
+  ],
+  "restockTotal": 440,
+  "exclusions": [
+    {
+      "reason": "PRE_ORDER",
+      "count": 9,
+      "description": "Pre-order or coming soon (tagged): not stocked yet"
+    },
+    {
+      "reason": "NON_PHYSICAL",
+      "count": 4,
+      "description": "Gift cards, gifts with purchase, memberships, donations: not stock"
+    },
+    {
+      "reason": "BUNDLE",
+      "count": 4,
+      "description": "Bundles: stock follows the items inside"
+    },
+    {
+      "reason": "LIKELY_DISCONTINUED",
+      "count": 14,
+      "description": "Likely discontinued: every size sold out, not a best seller, was discounted"
+    }
+  ],
+  "excludedProducts": [
+    {
+      "productId": 15129499369776,
+      "title": "Engine A 26 Basketball Shoes",
+      "productUrl": "https://www.reebok.com/products/reebok-engine-a-26-basketball-shoes-wheat-wheat-espresso-167921",
+      "reason": "PRE_ORDER"
+    },
+    {
+      "productId": 15150169719088,
+      "title": "Reese's x Angel Reese 1 Basketball Shoes - Big Kids",
+      "productUrl": "https://www.reebok.com/products/reebok-reeses-x-angel-reese-1-shoes-brown-orange-yellow-175076",
+      "reason": "PRE_ORDER"
+    },
+    {
+      "productId": 15220735213872,
+      "title": "Reese's x Angel Reese 1 Basketball Shoes",
+      "productUrl": "https://www.reebok.com/products/reebok-reeses-x-angel-reese-1-shoes-brown-orange-yellow-172376",
+      "reason": "PRE_ORDER"
+    }
+  ],
+  "sizeGaps": [
+    {
+      "productId": 9670379766064,
+      "title": "Classic Leather Shoes",
+      "productType": "Shoes",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100008790_SLC_eCom.jpg?v=1764595160",
+      "productUrl": "https://www.reebok.com/products/reebok-classic-leather-shoes-pure-grey-5-ftwr-white-reebok-rubber-gum-03-107421",
+      "sizes": [
+        {
+          "label": "M 3.5 / W 5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 4 / W 5.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 4.5 / W 6",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 5 / W 6.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 5.5 / W 7",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 6 / W 7.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 6.5 / W 8",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 7 / W 8.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 7.5 / W 9",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 8 / W 9.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 8.5 / W 10",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 9 / W 10.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 9.5 / W 11",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 10 / W 11.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 10.5 / W 12",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 11 / W 12.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 11.5 / W 13",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 12 / W 13.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 12.5 / W 14",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 13 / W 14.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 14 / W 15.5",
+          "available": true,
+          "core": false
+        },
+        {
+          "label": "M 15 / W 16.5",
+          "available": true,
+          "core": false
+        },
+        {
+          "label": "M 16 / W 17.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 17 / W 18.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 18 / W 19.5",
+          "available": false,
+          "core": false
+        }
+      ],
+      "coreRange": "M 6.5 / W 8–M 12.5 / W 14",
+      "missingCore": 13,
+      "soldOutSizes": 23,
+      "totalSizes": 25,
+      "onlyOneLeft": false
+    },
+    {
+      "productId": 15129513886000,
+      "title": "Engine A Pump Shoes",
+      "productType": "Shoes",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100277685_SLC_eCom_4ct4th.jpg?v=1783798151",
+      "productUrl": "https://www.reebok.com/products/reebok-engine-a-pump-shoes-white-black-orange-167841",
+      "sizes": [
+        {
+          "label": "M 3.5 / W 5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 4 / W 5.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 4.5 / W 6",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 5 / W 6.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 5.5 / W 7",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 6 / W 7.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 6.5 / W 8",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 7 / W 8.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 7.5 / W 9",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 8 / W 9.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 8.5 / W 10",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 9 / W 10.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 9.5 / W 11",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 10 / W 11.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 10.5 / W 12",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 11 / W 12.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 11.5 / W 13",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 12 / W 13.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 12.5 / W 14",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 13 / W 14.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 13.5 / W 15",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 14 / W 15.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 15 / W 16.5",
+          "available": false,
+          "core": false
+        }
+      ],
+      "coreRange": "M 6 / W 7.5–M 12 / W 13.5",
+      "missingCore": 13,
+      "soldOutSizes": 23,
+      "totalSizes": 23,
+      "onlyOneLeft": false
+    },
+    {
+      "productId": 9889152860464,
+      "title": "Camargue Shoes",
+      "productType": "Shoes",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100230438_SLC_eCom.jpg?v=1764595714",
+      "productUrl": "https://www.reebok.com/products/reebok-camargue-shoes-alabaster-barely-grey-chalk-132126",
+      "sizes": [
+        {
+          "label": "M 3.5 / W 4.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 4 / W 5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 4.5 / W 5.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 5 / W 6",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 5.5 / W 6.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 6 / W 7",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 6.5 / W 7.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 7 / W 8",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 7.5 / W 8.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 8 / W 9",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 8.5 / W 9.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 9 / W 10",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 9.5 / W 10.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 10 / W 11",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 10.5 / W 11.5",
+          "available": false,
+          "core": true
+        },
+        {
+          "label": "M 11 / W 12",
+          "available": true,
+          "core": false
+        },
+        {
+          "label": "M 11.5 / W 12.5",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 12 / W 13",
+          "available": false,
+          "core": false
+        },
+        {
+          "label": "M 13 / W 14",
+          "available": false,
+          "core": false
+        }
+      ],
+      "coreRange": "M 5.5 / W 6.5–M 10.5 / W 11.5",
+      "missingCore": 11,
+      "soldOutSizes": 18,
+      "totalSizes": 19,
+      "onlyOneLeft": true
+    }
+  ],
+  "sizeGapTotal": 537,
+  "sizeSummary": {
+    "productsAnalysed": 1198,
+    "productsMissingCoreSizes": 306,
+    "onlyOneSizeLeft": 42,
+    "fullySoldOut": 4,
+    "noSizeOption": 9,
+    "unrecognised": 1
+  },
+  "promotedSoldOuts": {
+    "products": [
+      {
+        "productId": 15192617943344,
+        "title": "Women's Cinched Sweatpants",
+        "productType": "Pants",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100293981_F_Model_eCom.jpg?v=1785239243",
+        "productUrl": "https://www.reebok.com/products/reebok-womens-cinch-sweatpants-hazy-teal-181087"
+      },
+      {
+        "productId": 10023263895856,
+        "title": "Premier Road Ultra Shoes",
+        "productType": "Shoes",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/Premier_Road_Ultra_Shoes_Black_Metallic_reebokpinnacle_2000294334117_1_910837cc-d1c2-42be-b17f-1cdcc7600b7f.jpg?v=1790169432",
+        "productUrl": "https://www.reebok.com/products/reebok-premier-road-ultra-shoes-black-metallic"
+      },
+      {
+        "productId": 15185613750576,
+        "title": "Reebok x Manors Men's Retro Crown Cap",
+        "productType": "Hats",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100298847_FR_eCom.jpg?v=1786796640",
+        "productUrl": "https://www.reebok.com/products/reebok-reebok-x-manors-mens-retro-crown-cap-espresso-184070"
+      },
+      {
+        "productId": 15129513886000,
+        "title": "Engine A Pump Shoes",
+        "productType": "Shoes",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100277685_SLC_eCom_4ct4th.jpg?v=1783798151",
+        "productUrl": "https://www.reebok.com/products/reebok-engine-a-pump-shoes-white-black-orange-167841"
+      },
+      {
+        "productId": 10074533560624,
+        "title": "Reebok x Icecream Board Flip Shoes",
+        "productType": "Shoes",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100282065_SLC_eCom.jpg?v=1781009085",
+        "productUrl": "https://www.reebok.com/products/reebok-board-flip-skate-shoes-blue-black-yellow-164528"
+      }
+    ],
+    "promotedChecked": 923,
+    "notice": "Home page links mostly load via JavaScript (6 product links in the page HTML): checked collections only"
+  },
+  "catalogQuality": {
+    "fewImages": 18,
+    "fewImagesExamples": [
+      {
+        "productId": 15185614569776,
+        "title": "Reebok x Manors Men's Retro Crown Cap",
+        "productType": "Hats",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100298846_FR_eCom.jpg?v=1786797791",
+        "productUrl": "https://www.reebok.com/products/reebok-reebok-x-manors-mens-retro-crown-cap-chalk-184070"
+      },
+      {
+        "productId": 15185613750576,
+        "title": "Reebok x Manors Men's Retro Crown Cap",
+        "productType": "Hats",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100298847_FR_eCom.jpg?v=1786796640",
+        "productUrl": "https://www.reebok.com/products/reebok-reebok-x-manors-mens-retro-crown-cap-espresso-184070"
+      },
+      {
+        "productId": 15236038328624,
+        "title": "Authentic Membership",
+        "productType": "Membership",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/authentic-product-small.png?v=1787602865",
+        "productUrl": "https://www.reebok.com/products/authentic-subscription-product-handle"
+      },
+      {
+        "productId": 9706026860848,
+        "title": "Low Cut Basic Socks 6 Pairs - Big Kids",
+        "productType": "Socks",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100203608_Sid_Torso_eCom.jpg?v=1764596509",
+        "productUrl": "https://www.reebok.com/products/reebok-low-cut-basic-socks-6-pairs-black-white-grey-116798"
+      },
+      {
+        "productId": 9670601572656,
+        "title": "Women's Zoned Cushion No-Show Socks 3 Pairs",
+        "productType": "Socks",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100206682_Sid_Torso_eCom.jpg?v=1764596209",
+        "productUrl": "https://www.reebok.com/products/reebok-zoned-cushion-no-show-socks-3-pairs-black-white-grey-116329"
+      },
+      {
+        "productId": 9670601474352,
+        "title": "Men's Performance Nylon Low Cut Socks 3 Pairs",
+        "productType": "Socks",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100206681_Sid_Torso_eCom.jpg?v=1764595185",
+        "productUrl": "https://www.reebok.com/products/reebok-performance-nylon-low-cut-socks-3-pairs-black-116325"
+      },
+      {
+        "productId": 9670599377200,
+        "title": "Women's Reebok Basic Low-Cut Socks 6 Pairs",
+        "productType": "Socks",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100206488_Sid_Torso_eCom.jpg?v=1764596939",
+        "productUrl": "https://www.reebok.com/products/reebok-reebok-basic-low-cut-socks-6-pairs-black-white-grey-117405"
+      },
+      {
+        "productId": 9670572441904,
+        "title": "Low Cut Basic Socks 6 Pairs - Big Kids",
+        "productType": "Socks",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100203596_Sid_Torso_eCom.jpg?v=1764594555",
+        "productUrl": "https://www.reebok.com/products/reebok-low-cut-basic-socks-6-pairs-black-white-grey-s10-ash-116789"
+      },
+      {
+        "productId": 9670572343600,
+        "title": "Women's Reebok Basic Quarter Socks 6 Pairs",
+        "productType": "Socks",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100203534_Sid_Torso_eCom.jpg?v=1764595548",
+        "productUrl": "https://www.reebok.com/products/reebok-reebok-basic-quarter-socks-6-pairs-black-white-grey-116771"
+      },
+      {
+        "productId": 9670564970800,
+        "title": "Zone Cushion Mid Crew Socks 3 Pairs",
+        "productType": "Socks",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0862/7834/0912/files/100202106_Sid_Torso_eCom.jpg?v=1764595283",
+        "productUrl": "https://www.reebok.com/products/reebok-zone-cushion-mid-crew-socks-3-pairs-black-116281"
+      }
+    ],
+    "minImages": 3,
+    "altText": {
+      "sampled": 30,
+      "productsWithAllAlt": 30,
+      "text": "30 of 30 sampled products have alt text on all images"
+    },
+    "thinDescriptions": 1,
+    "thinTitles": 65,
+    "blankProductType": 0,
+    "untagged": 0,
+    "caseVariantTypes": [],
+    "spreadsheetErrors": []
+  },
+  "pricing": {
+    "compareAtEqualsPrice": 1,
+    "discounted": 680,
+    "discountBuckets": {
+      "50%+": 213,
+      "1–10%": 10,
+      "10–30%": 106,
+      "30–50%": 351
+    },
+    "deepDiscount": 213,
+    "deepDiscountPercent": 50,
+    "deadStock": 410,
+    "freeShipping": {
+      "text": "SPEND $75.00 USD MORE FOR FREE SHIPPING",
+      "threshold": 75.0,
+      "medianPrice": 50.0,
+      "ratio": 1.5,
+      "source": "/"
+    }
+  },
+  "journey": [
+    {
+      "stage": "DISCOVER",
+      "label": "Discover",
+      "score": 54,
+      "checksRun": 2,
+      "checksTotal": 2,
+      "checks": [
+        {
+          "key": "HOME_PAGE_WEIGHT",
+          "label": "Home page weight",
+          "status": "CHECKED",
+          "score": 57,
+          "evidence": "Home page HTML is 1.58 MB (before images and scripts load)",
+          "fix": "Reduce home page weight (fewer apps and scripts, lighter sections) so it loads faster on phones",
+          "reason": null
+        },
+        {
+          "key": "SCRIPT_COUNT",
+          "label": "Scripts on home page",
+          "status": "CHECKED",
+          "score": 51,
+          "evidence": "113 script tags in the home page HTML",
+          "fix": "Remove unused apps and scripts; each one slows the first page shoppers see",
+          "reason": null
+        }
+      ]
+    },
+    {
+      "stage": "BROWSE",
+      "label": "Browse",
+      "score": 98,
+      "checksRun": 2,
+      "checksTotal": 3,
+      "checks": [
+        {
+          "key": "SEARCH_TEST",
+          "label": "Search test",
+          "status": "NOT_CHECKED_ROBOTS",
+          "score": null,
+          "evidence": "Not checked: the store's robots.txt blocks search",
+          "fix": null,
+          "reason": "robots.txt: Disallow: /search"
+        },
+        {
+          "key": "FINDABILITY",
+          "label": "Catalog findability",
+          "status": "CHECKED",
+          "score": 95,
+          "evidence": "0 products without a type, 65 with short titles, 0 untagged",
+          "fix": null,
+          "reason": null
+        },
+        {
+          "key": "SOLD_OUT_BEST_SELLERS",
+          "label": "Sold-out items in best sellers",
+          "status": "CHECKED",
+          "score": 100,
+          "evidence": "0 of 93 products in best-seller collections are fully sold out",
+          "fix": null,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "stage": "PRODUCT_PAGE",
+      "label": "Product page",
+      "score": 100,
+      "checksRun": 5,
+      "checksTotal": 5,
+      "checks": [
+        {
+          "key": "IMAGE_COUNT",
+          "label": "Product images",
+          "status": "CHECKED",
+          "score": 99,
+          "evidence": "18 of 1361 products have fewer than 3 images",
+          "fix": null,
+          "reason": null
+        },
+        {
+          "key": "ALT_TEXT",
+          "label": "Image alt text (sampled)",
+          "status": "CHECKED",
+          "score": 100,
+          "evidence": "30 of 30 sampled products have alt text on all images",
+          "fix": null,
+          "reason": null
+        },
+        {
+          "key": "DESCRIPTION_DEPTH",
+          "label": "Description depth",
+          "status": "CHECKED",
+          "score": 100,
+          "evidence": "1 of 1361 products have descriptions under 100 characters",
+          "fix": null,
+          "reason": null
+        },
+        {
+          "key": "REVIEWS_APP",
+          "label": "Reviews app",
+          "status": "CHECKED",
+          "score": 100,
+          "evidence": "Detected: reviews",
+          "fix": null,
+          "reason": null
+        },
+        {
+          "key": "SIZE_GUIDE",
+          "label": "Size guide (sampled pages)",
+          "status": "CHECKED",
+          "score": 100,
+          "evidence": "5 of 5 sampled product pages mention a size guide or chart",
+          "fix": null,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "stage": "SIZE_STOCK",
+      "label": "Size & stock",
+      "score": 61,
+      "checksRun": 2,
+      "checksTotal": 2,
+      "checks": [
+        {
+          "key": "VARIANTS_SOLD_OUT",
+          "label": "Sizes sold out",
+          "status": "CHECKED",
+          "score": 68,
+          "evidence": "19.4% of all size/colour variants are sold out (2877)",
+          "fix": "Restock the sold-out sizes that sell best (see the restock list)",
+          "reason": null
+        },
+        {
+          "key": "CORE_SIZE_GAPS",
+          "label": "Core sizes missing",
+          "status": "CHECKED",
+          "score": 54,
+          "evidence": "306 of 1198 sized products are missing a core size while other sizes are in stock",
+          "fix": "Prioritise restocking core (middle) sizes; they sell the most",
+          "reason": null
+        }
+      ]
+    },
+    {
+      "stage": "CART_CHECKOUT",
+      "label": "Cart & checkout",
+      "score": 94,
+      "checksRun": 4,
+      "checksTotal": 4,
+      "checks": [
+        {
+          "key": "FREE_SHIPPING",
+          "label": "Free-shipping threshold",
+          "status": "CHECKED",
+          "score": 75,
+          "evidence": "Free shipping from 75.00 vs median product price 50.00 (1.5×), source /",
+          "fix": null,
+          "reason": null
+        },
+        {
+          "key": "BNPL",
+          "label": "Buy now, pay later",
+          "status": "CHECKED",
+          "score": 100,
+          "evidence": "Detected: klarna",
+          "fix": null,
+          "reason": null
+        },
+        {
+          "key": "SHOP_PAY",
+          "label": "Shop Pay",
+          "status": "CHECKED",
+          "score": 100,
+          "evidence": "Detected: shop pay",
+          "fix": null,
+          "reason": null
+        },
+        {
+          "key": "RETURNS_WINDOW",
+          "label": "Returns window",
+          "status": "CHECKED_VIA_ALTERNATIVE",
+          "score": 100,
+          "evidence": "30-day returns (/pages/returns-exchanges)",
+          "fix": null,
+          "reason": "Policy page blocked by robots.txt (Disallow: /policies/); read /pages/returns-exchanges instead"
+        }
+      ]
+    },
+    {
+      "stage": "COME_BACK",
+      "label": "Come back",
+      "score": 67,
+      "checksRun": 3,
+      "checksTotal": 3,
+      "checks": [
+        {
+          "key": "WISHLIST_APP",
+          "label": "Wishlist",
+          "status": "CHECKED",
+          "score": 0,
+          "evidence": "Not found in the home page or sampled product page HTML",
+          "fix": "Add a wishlist so shoppers can save items and come back",
+          "reason": null
+        },
+        {
+          "key": "NOTIFY_ME",
+          "label": "\"Notify me\" on sold-out pages",
+          "status": "CHECKED",
+          "score": 100,
+          "evidence": "5 of 5 sampled sold-out pages offer \"notify me\" / back-in-stock alerts",
+          "fix": null,
+          "reason": null
+        },
+        {
+          "key": "EMAIL_CAPTURE",
+          "label": "Email capture",
+          "status": "CHECKED",
+          "score": 100,
+          "evidence": "Detected: klaviyo",
+          "fix": null,
+          "reason": null
+        }
+      ]
+    }
+  ],
+  "journeyScore": 79,
+  "dataNotes": [
+    "Timing comes from snapshot windows only; the store's updated_at timestamps are not used (they reflect bulk syncs).",
+    "Variants set to \"continue selling when out of stock\" look in stock, so sold-out counts may be low.",
+    "$ at risk is an estimate: price × demand score × baseline units/week × share of sizes sold out (see Assumptions).",
+    "First snapshot: changes and sell-out speed are available after the next check.",
+    "1 products have size formats that weren't recognised; they are left out of size analysis, not guessed.",
+    "2 pages were skipped because the store's robots.txt disallows them."
+  ]
+}

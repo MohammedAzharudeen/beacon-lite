@@ -1,0 +1,25 @@
+/* Design tokens from the mockups: one accent colour, neutral greys, status colours. */
+:root {
+  --bg: #f5f6f8;
+  --card: #ffffff;
+  --line: #e6e8ec;
+  --line-soft: #f1f3f6;
+  --ink: #0f172a;
+  --ink2: #334155;
+  --mute: #64748b;
+  --faint: #94a3b8;
+  --acc: #4f46e5;
+  --acc-soft: #eef2ff;
+  --good: #059669;
+  --good-soft: #ecfdf5;
+  --warn: #b45309;
+  --warn-soft: #fffbeb;
+  --bad: #dc2626;
+  --bad-soft: #fef2f2;
+  --cell-in: #d1fae5;
+  --cell-out: #f87171;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-focus: 0 0 0 3px rgba(79, 70, 229, 0.35);
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
