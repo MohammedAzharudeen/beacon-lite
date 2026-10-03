@@ -1,0 +1,15 @@
+server:
+  address: 127.0.0.1
+  port: 8080
+
+spring:
+  application:
+    name: beacon-lite
+  datasource:
+    url: jdbc:h2:file:./data/beacon-db;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
