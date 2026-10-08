@@ -59,8 +59,9 @@ never worked around.
   oldest first at startup, so changes, trends and "selling fast" have history. The dashboard shows
   "Loading demo history" with a progress bar meanwhile (under a minute; `GET /api/demo/progress`).
   No network; Refresh replays the newest recording (so it finds no changes); no automatic checks.
+  Data is kept in `data/demo/`.
 - **Live mode** (no profile): checks read the real store. On an empty database the recordings are
-  loaded first as a starting point.
+  loaded first as a starting point. Data is kept in `data/live/`, so live and demo never mix.
 - **Stopped part-way:** a snapshot and its report are saved together, so a stop never leaves half a
   result. A check cut short by a stop is marked failed at the next start ("The app stopped during
   this check"); the demo load then continues from the last complete snapshot.

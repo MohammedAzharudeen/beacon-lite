@@ -73,12 +73,12 @@ public record BeaconProperties(
    */
   public record Snapshot(
       @DefaultValue("6h") Duration interval,
-      @DefaultValue("./data/snapshots") String dir,
+      @DefaultValue("./data/live/snapshots") String dir,
       @DefaultValue("7") int keepAllDays,
       @DefaultValue("true") boolean schedulerEnabled) {
 
     public static Snapshot defaults() {
-      return new Snapshot(Duration.ofHours(6), "./data/snapshots", 7, true);
+      return new Snapshot(Duration.ofHours(6), "./data/live/snapshots", 7, true);
     }
   }
 

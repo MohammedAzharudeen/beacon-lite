@@ -7,7 +7,7 @@ spring:
   application:
     name: beacon-lite
   datasource:
-    url: jdbc:h2:file:./data/beacon-db;MODE=PostgreSQL
+    url: jdbc:h2:file:./data/live/beacon-db;MODE=PostgreSQL   # demo mode uses ./data/demo
   jpa:
     hibernate:
       ddl-auto: validate
@@ -45,7 +45,7 @@ beacon:
     max-retry-after: 30s
   snapshot:
     interval: 6h
-    dir: ./data/snapshots
+    dir: ./data/live/snapshots
     keep-all-days: 7
   llm:
     provider: ollama
@@ -61,10 +61,13 @@ spring:
   config:
     activate:
       on-profile: demo
+  datasource:
+    url: jdbc:h2:file:./data/demo/beacon-db;MODE=PostgreSQL   # kept apart from live data
 beacon:
   demo: true
   snapshot:
     scheduler-enabled: false
+    dir: ./data/demo/snapshots
 
 ---
 # Live stores (the default behaviour; named for clarity in run commands)

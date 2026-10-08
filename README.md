@@ -27,7 +27,7 @@ recording (3 Oct) is in [`reports/stevemadden-insight-brief.md`](reports/stevema
 
 | | Who | What they can see |
 |---|---|---|
-| **This version** | Swym's team (sales, customer success) | Any public Shopify store: research a store before a conversation, show what it is losing and where Swym helps |
+| **This version** | Super admin (internal team: sales, customer success) | Any public Shopify store: research a store before a conversation, show what it is losing and where intent data would help |
 | **Merchant version** (planned) | A store's own team | Only their own store. Access comes from installing the Swym Shopify app (Shopify confirms ownership), so a merchant cannot add another store. Comparisons use anonymous benchmarks ("stores like yours"), never a named competitor's data |
 
 The merchant version also replaces the estimated demand signals with Swym's measured intent data
@@ -46,6 +46,8 @@ Requirements: **Java 21**. Node is downloaded by the build; no database to insta
 # Live: add any standard Shopify store from the dashboard
 ./mvnw spring-boot:run
 ```
+
+Demo and live keep separate data (`data/demo/` and `data/live/`), so switching modes never mixes them.
 
 Open <http://127.0.0.1:8080>. The app listens on 127.0.0.1 only. If another app already uses port
 8080, start on a free port with `--server.port=8099` (or `SERVER_PORT=8099`). Use the `127.0.0.1`
@@ -153,7 +155,7 @@ checkout or accounts. To ask a question or opt out, open an issue at
 | `src/main/resources/snapshots/` | Recorded store snapshots (demo mode and tests) |
 | `src/test/resources/fixtures/` | Real recorded store responses used by tests |
 | `scripts/record-stores.py` | Records store responses with the same robots.txt rules as the app |
-| `docs/` | [User guide](docs/USER_GUIDE.md), [how every number is calculated](docs/HOW_IT_WORKS.md), [accuracy checks](docs/ACCURACY.md), [development spec](docs/DEVSPEC.md) and [coding standards](docs/CODING_STANDARDS.md) |
+| `docs/` | [User guide](docs/USER_GUIDE.md), [how every number is calculated](docs/HOW_IT_WORKS.md), [accuracy checks](docs/ACCURACY.md), [development spec](docs/DEVSPEC.md), [coding standards](docs/CODING_STANDARDS.md), Parts 2–3 answers and the [AI reflection](docs/AI_REFLECTION.md) |
 
 API documentation: <http://127.0.0.1:8080/swagger-ui.html> while the app runs.
 
