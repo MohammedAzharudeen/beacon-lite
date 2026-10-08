@@ -1,6 +1,6 @@
 # Coding Standards
 
-Applies to every change in Beacon Lite. CI fails if a rule marked **(enforced)** is broken.
+Applies to every change in Beacon Lite; the design itself is in [`DEVSPEC.md`](DEVSPEC.md). CI fails if a rule marked **(enforced)** is broken.
 
 ## 1. Project structure
 

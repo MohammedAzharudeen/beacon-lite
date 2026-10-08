@@ -110,6 +110,9 @@ flowchart LR
 - **Every judgment call** (core-size rule, exclusions, demand weights, thresholds) lives in
   [`config/assumptions.yml`](config/assumptions.yml). Its hash is stored with every report, so each
   number can be traced to a snapshot and an assumptions version.
+- **Built spec-first.** The [development spec](docs/DEVSPEC.md) was written and approved before any
+  code: requirements with acceptance criteria, data model, API, and the build checkpoints the code
+  followed. Its change log records what changed during the build.
 
 ## Store coverage
 
@@ -150,7 +153,7 @@ checkout or accounts. To ask a question or opt out, open an issue at
 | `src/main/resources/snapshots/` | Recorded store snapshots (demo mode and tests) |
 | `src/test/resources/fixtures/` | Real recorded store responses used by tests |
 | `scripts/record-stores.py` | Records store responses with the same robots.txt rules as the app |
-| `docs/` | [User guide](docs/USER_GUIDE.md), [how every number is calculated](docs/HOW_IT_WORKS.md), [accuracy checks](docs/ACCURACY.md) and [coding standards](docs/CODING_STANDARDS.md) |
+| `docs/` | [User guide](docs/USER_GUIDE.md), [how every number is calculated](docs/HOW_IT_WORKS.md), [accuracy checks](docs/ACCURACY.md), [development spec](docs/DEVSPEC.md) and [coding standards](docs/CODING_STANDARDS.md) |
 
 API documentation: <http://127.0.0.1:8080/swagger-ui.html> while the app runs.
 
