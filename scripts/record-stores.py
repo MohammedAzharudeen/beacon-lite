@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Records the public storefront responses Beacon Lite reads, for offline tests and demo data.
 
-Run on a machine with internet access (the build sandbox has none):
+Run on a machine with internet access:
 
     python3 scripts/record-stores.py                    # full recording of the three demo stores
     python3 scripts/record-stores.py --catalog-only     # catalog pages only (for repeated snapshots)

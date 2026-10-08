@@ -4,7 +4,7 @@ import { EstimateBadge } from "../common/EstimateBadge";
 import { Money } from "../common/Money";
 import { JourneyScorecard } from "../journey/JourneyScorecard";
 import { HeadlineCard } from "./HeadlineCard";
-import { KpiCard } from "./KpiCard";
+import { KpiCard, type KpiDelta } from "./KpiCard";
 import { TopActions } from "./TopActions";
 
 interface Props {
@@ -18,12 +18,37 @@ export function Overview({ report, onStatus, onOpenAction }: Props) {
   const points = trends.data?.points ?? [];
   const changes = report.kpis.changedSinceLastCheck;
   const dataDate = new Date(report.capturedAt).toLocaleString();
+  const last = points[points.length - 1];
+  const prev = points[points.length - 2];
+  // Change against the previous check, shown only when this report is the latest point
+  const delta = (
+    pick: (p: (typeof points)[number]) => number | null,
+    format: (d: number) => string,
+    higherIsBetter: boolean,
+  ): KpiDelta | null => {
+    if (!last || !prev || last.snapshotId !== report.snapshotId) return null;
+    const a = pick(last);
+    const b = pick(prev);
+    if (a === null || b === null) return null;
+    const d = a - b;
+    if (Math.abs(d) < 1e-9) return { text: "No change", better: true };
+    return {
+      text: `${d > 0 ? "▲" : "▼"} ${format(Math.abs(d))}`,
+      better: higherIsBetter ? d > 0 : d < 0,
+    };
+  };
   return (
     <>
       <HeadlineCard report={report} />
       <div className="kpis">
         <KpiCard
           label="Sizes sold out"
+          icon="shirt"
+          delta={delta(
+            (p) => p.sizesSoldOutPct,
+            (d) => `${d.toFixed(1)} pts`,
+            false,
+          )}
           value={report.kpis.sizesSoldOutPct}
           unit="%"
           tooltip={`Share of all size/colour variants marked unavailable in the full catalog (${report.kpis.soldOutVariants.toLocaleString("en-US")} of ${report.catalog.variants.toLocaleString("en-US")}). Data from ${dataDate}.`}
@@ -32,6 +57,12 @@ export function Overview({ report, onStatus, onOpenAction }: Props) {
         />
         <KpiCard
           label="$ at risk / week"
+          icon="trendDown"
+          delta={delta(
+            (p) => Number(p.atRiskPerWeek),
+            (d) => Math.round(d).toLocaleString("en-US"),
+            false,
+          )}
           value={
             <Money
               amount={report.kpis.atRiskPerWeek.amount}
@@ -48,6 +79,12 @@ export function Overview({ report, onStatus, onOpenAction }: Props) {
         />
         <KpiCard
           label="Journey score"
+          icon="route"
+          delta={delta(
+            (p) => p.journeyScore,
+            (d) => `${d}`,
+            true,
+          )}
           value={report.journeyScore ?? "—"}
           unit="/ 100"
           tooltip="Average of the six stage scores; each stage uses only the checks that ran. Checks blocked by robots.txt are listed, never guessed."
@@ -58,6 +95,7 @@ export function Overview({ report, onStatus, onOpenAction }: Props) {
         />
         <KpiCard
           label="Changed since last check"
+          icon="activity"
           value={
             changes
               ? changes.soldOut + changes.restocked + changes.priceChanges
@@ -73,6 +111,7 @@ export function Overview({ report, onStatus, onOpenAction }: Props) {
       </div>
       <TopActions
         actions={report.topActions}
+        restock={report.restock}
         onStatus={onStatus}
         onOpen={onOpenAction}
       />

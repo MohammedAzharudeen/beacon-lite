@@ -12,7 +12,7 @@ the values below are the defaults.
 4. [Overview: headline and key numbers](#4-overview-headline-and-key-numbers)
 5. [Restock priority and $ at risk](#5-restock-priority-and--at-risk)
 6. [Top 5 actions](#6-top-5-actions)
-7. [Shopper journey: 6 stages, 17 checks](#7-shopper-journey-6-stages-17-checks)
+7. [Shopper journey: 6 stages, 19 checks](#7-shopper-journey-6-stages-19-checks)
 8. [Restock tab](#8-restock-tab)
 9. [Sizes tab](#9-sizes-tab)
 10. [Changes tab](#10-changes-tab)
@@ -54,10 +54,16 @@ never worked around.
 - **When checks run:** when a store is added, when **Refresh now** is clicked, and every 6 hours
   automatically while the app runs (live mode). If a check is already running, a refresh joins it.
 - **Failures:** a failed check never replaces the last good snapshot.
-- **Demo mode** (`--spring.profiles.active=demo`): the three stores recorded on 3 Oct 2026 are
-  replayed. No network; Refresh replays the same recording; no automatic checks.
+- **Demo mode** (`--spring.profiles.active=demo`): real snapshots of the three stores taken between
+  3 and 8 Oct 2026 (6 or 7 per store, in `src/main/resources/snapshots/<domain>/`) are replayed
+  oldest first at startup, so changes, trends and "selling fast" have history. The dashboard shows
+  "Loading demo history" with a progress bar meanwhile (under a minute; `GET /api/demo/progress`).
+  No network; Refresh replays the newest recording (so it finds no changes); no automatic checks.
 - **Live mode** (no profile): checks read the real store. On an empty database the recordings are
   loaded first as a starting point.
+- **Stopped part-way:** a snapshot and its report are saved together, so a stop never leaves half a
+  result. A check cut short by a stop is marked failed at the next start ("The app stopped during
+  this check"); the demo load then continues from the last complete snapshot.
 
 ## 3. Top bar
 
@@ -134,7 +140,7 @@ Severity: a journey check scores 100 − its score (alt text at 0 → severity 1
 **To do**, **Done** or **Dismiss**. Dismissed actions leave the top 5 but stay in the full lists.
 Click an action to see all its evidence. Catalog and journey actions carry no $ figure.
 
-## 7. Shopper journey: 6 stages, 17 checks
+## 7. Shopper journey: 6 stages, 19 checks
 
 **Scoring.** Count checks score the share that passed × 100. Band checks score 100 at the *best*
 value, 0 at the *worst*, in a straight line between. App checks score 100 if found, 0 if not.

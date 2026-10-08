@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { StoreResponse } from "../../types/beacon";
+import { Icon } from "../common/Icon";
 import { LocalTime } from "../common/LocalTime";
 
 interface Props {
@@ -24,16 +25,34 @@ export function TopBar({
   onAssumptions,
 }: Props) {
   const [url, setUrl] = useState("");
+  const [addOpen, setAddOpen] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (addOpen) inputRef.current?.focus();
+  }, [addOpen]);
+
+  const status = refreshing
+    ? "busy"
+    : selected?.status === "FAILED"
+      ? "bad"
+      : selected?.currentSnapshotId
+        ? "ok"
+        : "busy";
+
   return (
     <header className="top">
       <div className="logo">
         <div className="mark" aria-hidden="true">
-          B
+          <Icon name="activity" size={16} />
         </div>
-        Beacon Lite <small>merchant intelligence</small>
+        <span>
+          Beacon <span className="grad-text">Lite</span>
+        </span>
       </div>
       {stores.length > 0 && (
-        <>
+        <div className="store-pick">
+          <span className={`dot ${status}`} aria-hidden="true" />
           <label className="sr-only" htmlFor="store-switcher">
             Store
           </label>
@@ -49,11 +68,11 @@ export function TopBar({
               </option>
             ))}
           </select>
-        </>
+        </div>
       )}
-      {selected && (
+      {selected?.lastCheckedAt && (
         <span className="meta">
-          Last checked <LocalTime iso={selected.lastCheckedAt} />
+          Updated <LocalTime iso={selected.lastCheckedAt} />
           {selected.nextCheckAt && (
             <>
               {" "}
@@ -62,44 +81,72 @@ export function TopBar({
           )}
         </span>
       )}
+      <div className="spacer" />
       {selected && (
         <button
           type="button"
           className="btn ghost"
           onClick={onRefresh}
           disabled={refreshing}
+          aria-label={refreshing ? "Refreshing" : "Refresh now"}
         >
-          {refreshing ? "Refreshing…" : "Refresh now"}
+          <Icon name="refresh" className={refreshing ? "spin" : ""} />
+          <span className="lbl">
+            {refreshing ? "Refreshing…" : "Refresh now"}
+          </span>
         </button>
       )}
-      <button type="button" className="btn ghost" onClick={onAssumptions}>
-        Assumptions
-      </button>
-      <div className="spacer" />
-      <form
-        className="addbox"
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (url.trim()) {
-            onAdd(url.trim());
-            setUrl("");
-          }
-        }}
+      <button
+        type="button"
+        className="btn ghost"
+        onClick={onAssumptions}
+        aria-label="Assumptions"
       >
-        <label className="sr-only" htmlFor="add-store">
-          Store address
-        </label>
-        <input
-          id="add-store"
-          className="input"
-          placeholder="Add a store, e.g. stevemadden.com"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-        />
-        <button type="submit" className="btn" disabled={adding}>
-          Add store
+        <Icon name="sliders" />
+        <span className="lbl">Assumptions</span>
+      </button>
+      {addOpen ? (
+        <form
+          className="addbox"
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (url.trim()) {
+              onAdd(url.trim());
+              setUrl("");
+              setAddOpen(false);
+            }
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") setAddOpen(false);
+          }}
+        >
+          <label className="sr-only" htmlFor="add-store">
+            Store address
+          </label>
+          <input
+            id="add-store"
+            ref={inputRef}
+            className="input"
+            placeholder="e.g. allbirds.com"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+          />
+          <button type="submit" className="btn" disabled={adding}>
+            Add store
+          </button>
+        </form>
+      ) : (
+        <button
+          type="button"
+          className="btn"
+          onClick={() => setAddOpen(true)}
+          disabled={adding}
+          aria-label="Add store"
+        >
+          <Icon name="plus" />
+          <span className="lbl">Add store</span>
         </button>
-      </form>
+      )}
     </header>
   );
 }

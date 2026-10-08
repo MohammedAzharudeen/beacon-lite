@@ -369,6 +369,13 @@ export interface AssumptionsResponse {
   values: Assumptions;
 }
 
+/** Loading of the recorded demo stores at startup (demo mode). */
+export interface DemoProgress {
+  loading: boolean;
+  loaded: number;
+  total: number;
+}
+
 export interface LlmStatus {
   provider: string;
   baseUrl: string;

@@ -10,3 +10,5 @@ frontend/dist/
 *.iml
 .DS_Store
 __pycache__/
+old-demo-data/
+scripts/bootstrap-deps.sh

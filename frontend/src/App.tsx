@@ -9,6 +9,7 @@ import { EmptyState, ErrorState, Skeleton } from "./components/common/States";
 import { ChatPanel } from "./components/layout/ChatPanel";
 import { TopBar } from "./components/layout/TopBar";
 import { JobProgress } from "./components/onboarding/JobProgress";
+import { Icon } from "./components/common/Icon";
 import { AddingStore } from "./components/onboarding/AddingStore";
 import { WelcomeAddStore } from "./components/onboarding/WelcomeAddStore";
 import { Overview } from "./components/overview/Overview";
@@ -17,6 +18,7 @@ import { RestockTable } from "./components/restock/RestockTable";
 import { SizeGapHeatmap } from "./components/sizes/SizeGapHeatmap";
 import {
   useAssumptions,
+  useDemoProgress,
   useJob,
   useReport,
   useStores,
@@ -65,6 +67,12 @@ export default function App() {
     const t = setInterval(reloadStores, 3000);
     return () => clearInterval(t);
   }, [firstScanUntracked, reloadStores]);
+
+  // Demo mode loads its recorded history at startup; show progress, then load the finished data
+  const demo = useDemoProgress(() => {
+    stores.reload();
+    report.reload();
+  });
 
   const job = useJob(jobId, (done) => {
     stores.reload();
@@ -183,7 +191,25 @@ export default function App() {
           results below are from the previous successful check.
         </div>
       )}
-      {list.length === 0 ? (
+      {demo?.loading ? (
+        <div className="welcome">
+          <div className="card wcard" role="status" aria-live="polite">
+            <h2>Loading demo history</h2>
+            <p>
+              Replaying the recorded snapshots of the demo stores, oldest first,
+              so changes and trends are ready. {demo.loaded} of {demo.total}{" "}
+              snapshots loaded.
+            </p>
+            <div className="prog wide" aria-hidden="true">
+              <i
+                style={{
+                  width: `${demo.total ? (100 * demo.loaded) / demo.total : 0}%`,
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      ) : list.length === 0 ? (
         <WelcomeAddStore
           onAdd={add}
           adding={adding}
@@ -279,6 +305,7 @@ export default function App() {
                     target="_blank"
                     rel="noreferrer"
                   >
+                    <Icon name="sparkles" />
                     Open Insight Brief (print-ready)
                   </a>
                 </div>

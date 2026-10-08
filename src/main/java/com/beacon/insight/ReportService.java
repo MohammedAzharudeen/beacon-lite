@@ -12,12 +12,14 @@ import com.beacon.diff.ChangeEventRepository;
 import com.beacon.insight.report.ChangeCounts;
 import com.beacon.insight.report.InsightReport;
 import java.time.Clock;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -106,12 +108,18 @@ public class ReportService {
     return latest(storeId).orElseThrow(() -> new BeaconException(ErrorCode.REPORT_NOT_READY));
   }
 
-  /** Every stored report of a store, oldest first (KPI trend lines). */
+  /**
+   * A small value from every stored report of a store, oldest first (KPI trend lines). Each report
+   * is decoded, reduced to {@code pick}'s result and released before the next, so memory stays flat
+   * however many snapshots a store has.
+   */
   @Transactional(readOnly = true)
-  public List<InsightReport> history(long storeId) {
-    return reports.findByStoreIdOrderByGeneratedAtAsc(storeId).stream()
-        .map(e -> ReportCodec.decode(e.getPayload()))
-        .toList();
+  public <T> List<T> history(long storeId, Function<InsightReport, T> pick) {
+    List<T> out = new ArrayList<>();
+    for (InsightReportEntity e : reports.findByStoreIdOrderByGeneratedAtAsc(storeId)) {
+      out.add(pick.apply(ReportCodec.decode(e.getPayload())));
+    }
+    return out;
   }
 
   private ChangeContext changeContext(long storeId, long snapshotId) {

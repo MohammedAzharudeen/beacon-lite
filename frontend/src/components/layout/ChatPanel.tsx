@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { beaconApi, BeaconApiError } from "../../api/beaconApi";
 import { useLlmStatus } from "../../hooks/useBeacon";
+import { Icon } from "../common/Icon";
 import type { ChatResponse, ChatTurn } from "../../types/beacon";
 
 const SUGGESTIONS = [
@@ -94,7 +95,12 @@ export function ChatPanel({
   return (
     <aside className="card chat" aria-label="Ask Beacon">
       <div className="hd">
-        <h3>Ask Beacon</h3>
+        <h3>
+          <span className="spark-ic" aria-hidden="true">
+            <Icon name="sparkles" size={14} />
+          </span>
+          Ask Beacon
+        </h3>
         <div className="sub">
           Questions about {storeName}, answered from verified numbers
         </div>

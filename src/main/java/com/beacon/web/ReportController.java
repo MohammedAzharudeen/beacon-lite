@@ -178,17 +178,16 @@ public class ReportController {
   public TrendsResponse trends(@PathVariable long storeId) {
     stores.get(storeId);
     return new TrendsResponse(
-        reports.history(storeId).stream()
-            .map(
-                r ->
-                    new TrendsResponse.Point(
-                        r.snapshotId(),
-                        r.capturedAt(),
-                        r.kpis().sizesSoldOutPct(),
-                        r.journeyScore(),
-                        r.kpis().atRiskPerWeek().amount(),
-                        r.kpis().soldOutVariants()))
-            .toList());
+        reports.history(
+            storeId,
+            r ->
+                new TrendsResponse.Point(
+                    r.snapshotId(),
+                    r.capturedAt(),
+                    r.kpis().sizesSoldOutPct(),
+                    r.journeyScore(),
+                    r.kpis().atRiskPerWeek().amount(),
+                    r.kpis().soldOutVariants())));
   }
 
   @PutMapping("/actions/{actionKey}")

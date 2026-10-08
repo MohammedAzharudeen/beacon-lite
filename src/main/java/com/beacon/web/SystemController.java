@@ -5,6 +5,7 @@ import com.beacon.common.Metrics;
 import com.beacon.config.Assumptions;
 import com.beacon.job.Job;
 import com.beacon.job.JobRepository;
+import com.beacon.snapshot.DemoSeeder;
 import com.beacon.store.Store;
 import com.beacon.store.StoreService;
 import com.beacon.web.dto.AssumptionsResponse;
@@ -30,24 +31,33 @@ public class SystemController {
   private final StoreService stores;
   private final JobRepository jobs;
   private final Metrics metrics;
+  private final DemoSeeder demoSeeder;
 
   public SystemController(
       Assumptions assumptions,
       LlmProvider llm,
       StoreService stores,
       JobRepository jobs,
-      Metrics metrics) {
+      Metrics metrics,
+      DemoSeeder demoSeeder) {
     this.assumptions = assumptions;
     this.llm = llm;
     this.stores = stores;
     this.jobs = jobs;
     this.metrics = metrics;
+    this.demoSeeder = demoSeeder;
   }
 
   @GetMapping("/assumptions")
   @Operation(summary = "Every judgment call and its version (hash of assumptions.yml)")
   public AssumptionsResponse assumptions() {
     return new AssumptionsResponse(assumptions.version(), assumptions);
+  }
+
+  @GetMapping("/demo/progress")
+  @Operation(summary = "Loading of the recorded demo stores: done when loading is false")
+  public DemoSeeder.Progress demoProgress() {
+    return demoSeeder.progress();
   }
 
   @GetMapping("/llm/status")

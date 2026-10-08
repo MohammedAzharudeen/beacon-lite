@@ -42,6 +42,20 @@ export function JourneyScorecard({
           >
             <div className="nm">{s.label}</div>
             <div className="sc">{s.score ?? "—"}</div>
+            <div className="bar" aria-hidden="true">
+              <i
+                className={
+                  s.score === null
+                    ? ""
+                    : s.score >= 80
+                      ? "good"
+                      : s.score >= LOW
+                        ? "warn"
+                        : "bad"
+                }
+                style={{ width: `${s.score ?? 0}%` }}
+              />
+            </div>
             <div className="note">
               based on {s.checksRun} of {s.checksTotal} checks
             </div>

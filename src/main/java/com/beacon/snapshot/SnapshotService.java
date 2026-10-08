@@ -29,6 +29,9 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionTemplate;
 
@@ -183,8 +186,34 @@ public class SnapshotService {
             store.rename(data.signals().home().siteName());
           }
           store.activate(managed.getId(), data.store().currency());
+          // Same transaction: a stopped app never leaves a complete snapshot without its report
+          reports.generate(storeId, snapshot.getId(), data, previous.isPresent());
         });
-    reports.generate(storeId, snapshot.getId(), data, previous.isPresent());
+  }
+
+  /**
+   * Snapshots left running by a stopped app can't finish; mark them failed so they are never
+   * mistaken for data. Runs before the demo loader, which resumes from the last complete one.
+   */
+  @EventListener(ApplicationReadyEvent.class)
+  @Order(-1)
+  public void failInterruptedSnapshots() {
+    Instant now = clock.instant();
+    tx.executeWithoutResult(
+        status ->
+            snapshots
+                .findByStatus(SnapshotStatus.RUNNING)
+                .forEach(
+                    s -> {
+                      log.warn(
+                          "[SNAPSHOT] store={} snapshot={} interrupted by restart",
+                          s.getStoreId(),
+                          s.getId());
+                      s.fail(
+                          ErrorCode.INTERNAL_ERROR.name(),
+                          "The app stopped during this check; refresh to try again",
+                          now);
+                    }));
   }
 
   private Optional<Integer> previousProductCount(long storeId) {

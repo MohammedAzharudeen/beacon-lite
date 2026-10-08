@@ -2,14 +2,17 @@ package com.beacon.insight;
 
 import com.beacon.adapter.model.CatalogSnapshotData;
 import com.beacon.config.AssumptionsLoader;
+import com.beacon.snapshot.SnapshotCodec;
 import com.beacon.testsupport.RecordingConversion;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Instant;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -24,6 +27,9 @@ import org.slf4j.LoggerFactory;
  * (one timestamped folder per run). Only on request:
  *
  * <pre>./mvnw test -Dtest=BackTestRunner -Dbeacon.backtest=.bootstrap/recordings</pre>
+ *
+ * <p>It also reads app snapshot folders ({@code <domain>/<capture time>.json.gz}), e.g. the demo
+ * recordings: {@code -Dbeacon.backtest=src/main/resources/snapshots}.
  */
 class BackTestRunner {
 
@@ -58,6 +64,26 @@ class BackTestRunner {
         }
       }
     }
+    // App snapshot folders too: <domain>/<capture time>.json.gz (demo recordings, live data)
+    try (Stream<Path> dirs = Files.list(root)) {
+      for (Path store : dirs.filter(Files::isDirectory).sorted().toList()) {
+        try (Stream<Path> files = Files.list(store)) {
+          for (Path file :
+              files
+                  .filter(f -> f.getFileName().toString().endsWith(".json.gz"))
+                  .sorted()
+                  .toList()) {
+            try (InputStream in = Files.newInputStream(file)) {
+              CatalogSnapshotData data = SnapshotCodec.read(in);
+              byStore.computeIfAbsent(data.store().domain(), k -> new ArrayList<>()).add(data);
+            }
+          }
+        }
+      }
+    }
+    byStore
+        .values()
+        .forEach(list -> list.sort(Comparator.comparing(CatalogSnapshotData::capturedAt)));
     BackTest backTest = new BackTest(AssumptionsLoader.packaged());
     byStore.forEach(
         (domain, snapshots) -> {

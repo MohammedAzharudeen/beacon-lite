@@ -9,6 +9,7 @@ import type {
   ChatResponse,
   InsightReport,
   JobResponse,
+  DemoProgress,
   LlmStatus,
   Page,
   RefreshResponse,
@@ -128,4 +129,5 @@ export const beaconApi = {
   chat: (req: ChatRequest) => post<ChatResponse>("/api/chat", req),
   assumptions: () => get<AssumptionsResponse>("/api/assumptions"),
   llmStatus: () => get<LlmStatus>("/api/llm/status"),
+  demoProgress: () => get<DemoProgress>("/api/demo/progress"),
 };

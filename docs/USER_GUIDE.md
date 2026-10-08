@@ -1,6 +1,6 @@
 # User guide
 
-Screens below show real data recorded from the demo stores on 3 Oct 2026. Product photos load from
+Screens below show real data recorded from the demo stores in October 2026. Product photos load from
 the stores' websites, so they appear as grey placeholders when the app runs offline.
 
 ## 1. Add a store

@@ -26,9 +26,39 @@ sell-out-speed signal. It counts as a hit when, within the next 24 hours of snap
 loses another size or sells out completely. Hit rate = hits ÷ flags that had a later snapshot to
 check against.
 
-**Status:** waiting for enough snapshots. The back-test needs at least two days of snapshots taken
-about every 6 hours. With the recordings in `.bootstrap/recordings/`, run:
+**Data.** The demo recordings: real snapshots of the three stores taken between 3 and 8 Oct 2026,
+6 or 7 per store, 12 to 24 hours apart. Run it with:
 
 ```bash
-./mvnw test -Dtest=BackTestRunner -Dbeacon.backtest=.bootstrap/recordings
+./mvnw test -Dtest=BackTestRunner -Dbeacon.backtest=src/main/resources/snapshots
 ```
+
+**Result**
+
+| Store | Snapshots | Flags | Flags with a later snapshot within 24 h | Hits | Hit rate |
+|---|---:|---:|---:|---:|---:|
+| Steve Madden | 7 | 441 | 216 | 34 | 15.7% |
+| Petal & Pup | 6 | 362 | 70 | 11 | 15.7% |
+| Reebok | 7 | 122 | 59 | 5 | 8.5% |
+
+**Baseline.** On their own these rates look low, so they were compared with products that also had
+a size sold out but no new sell-out since the last check, over the same snapshot pairs (a separate
+script recount from the raw files; simpler than the flag rule, so the flag rates differ slightly):
+
+| Store | Sold out since last check | Other partly sold-out products | Ratio |
+|---|---:|---:|---:|
+| Steve Madden | 14.3% (36 of 252) | 3.4% (167 of 4,958) | about 4× |
+| Petal & Pup | 11.6% (8 of 69) | 1.7% (68 of 4,037) | about 7× |
+| Reebok | 6.2% (5 of 81) | 3.6% (57 of 1,567) | about 1.7× |
+
+**What this means.** A "selling fast" flag makes a further sell-out 1.7 to 7 times more likely than
+for other products, so the signal is worth its weight in the demand score; most flagged products
+still don't lose another size within a day, so it is a ranking signal, not a prediction. Limits:
+five days of data, checks 12 to 24 hours apart instead of 6, and a restock between checks can hide a
+sell-out. Swym's back-in-stock sign-ups would measure the same demand directly.
+
+## Recount of the demo's latest snapshot (8 Oct 2026)
+
+A separate script recounted the Steve Madden figures the demo opens on from the raw file: 2,510
+products, 8,029 of 24,016 sizes sold out (33.4%), and 145 sizes sold out and 201 back in stock
+between the 7 and 8 Oct checks, with no price changes. All match the dashboard.

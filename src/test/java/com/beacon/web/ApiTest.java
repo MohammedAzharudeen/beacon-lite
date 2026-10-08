@@ -89,6 +89,13 @@ class ApiTest {
   }
 
   @Test
+  void demoProgress_notLoadingWhenSeedingIsOff() throws Exception {
+    mvc.perform(get("/api/demo/progress"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.loading").value(false));
+  }
+
+  @Test
   void root_forwardsToDashboard() throws Exception {
     mvc.perform(get("/")).andExpect(status().isOk()).andExpect(forwardedUrl("/index.html"));
   }

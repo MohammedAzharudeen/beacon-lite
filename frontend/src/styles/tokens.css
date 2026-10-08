@@ -1,25 +1,36 @@
-/* Design tokens from the mockups: one accent colour, neutral greys, status colours. */
+/* Design tokens: neutral surfaces, one indigo→violet→cyan gradient for brand moments, status colours used only for meaning. */
 :root {
-  --bg: #f5f6f8;
+  --bg: #f6f7fb;
   --card: #ffffff;
-  --line: #e6e8ec;
-  --line-soft: #f1f3f6;
-  --ink: #0f172a;
+  --line: #e7e9f0;
+  --line-soft: #f1f3f8;
+  --ink: #0b1220;
   --ink2: #334155;
   --mute: #64748b;
   --faint: #94a3b8;
-  --acc: #4f46e5;
-  --acc-soft: #eef2ff;
+  --acc: #5b5bf0;
+  --acc-ink: #4338ca;
+  --acc-soft: #eef0ff;
   --good: #059669;
   --good-soft: #ecfdf5;
   --warn: #b45309;
-  --warn-soft: #fffbeb;
-  --bad: #dc2626;
-  --bad-soft: #fef2f2;
+  --warn-soft: #fff8eb;
+  --bad: #e11d48;
+  --bad-soft: #fff1f3;
   --cell-in: #d1fae5;
-  --cell-out: #f87171;
-  --radius: 12px;
-  --radius-sm: 8px;
-  --shadow-focus: 0 0 0 3px rgba(79, 70, 229, 0.35);
+  --cell-out: #fb7185;
+
+  /* Brand gradient (logo, primary buttons, hero accents) and its soft wash (hero card background) */
+  --grad: linear-gradient(135deg, #6366f1 0%, #8b5cf6 48%, #06b6d4 100%);
+  --grad-soft: linear-gradient(135deg, #eef0ff 0%, #f4efff 45%, #e9fbff 100%);
+  --grad-text: linear-gradient(90deg, #4f46e5, #7c3aed 55%, #0891b2);
+
+  --radius: 14px;
+  --radius-sm: 9px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 6px 20px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 12px 40px rgba(76, 70, 229, 0.14);
+  --shadow-focus: 0 0 0 3px rgba(99, 102, 241, 0.3);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }

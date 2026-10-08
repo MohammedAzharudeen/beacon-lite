@@ -8,17 +8,20 @@ request at a time → you get a dashboard, a one-page Insight Brief and an "Ask 
 
 ![Dashboard](docs/images/overview.png)
 
-## What it found (real data, 3 Oct 2026)
+## What it found (real data, 8 Oct 2026)
 
 | Store | Products | Sizes sold out | Products missing core sizes | Styles with one size left | Journey score |
 |---|---:|---:|---:|---:|---:|
-| Steve Madden | 2,512 | 33.9% | 789 | 156 | 76 |
-| Reebok | 1,361 | 19.4% | 306 | 42 | 79 |
-| Petal & Pup | 6,086 | 52.7% | 1,697 | 564 | 74 |
+| Steve Madden | 2,510 | 33.4% | 794 | 155 | 75 |
+| Reebok | 1,385 | 19.8% | 317 | 40 | 79 |
+| Petal & Pup | 6,187 | 50.1% | 1,679 | 524 | 75 |
 
 "Missing core sizes" = a middle size of the product's size run is sold out while other sizes are
-still in stock. A sample brief generated from these recordings is in
-[`reports/stevemadden-insight-brief.md`](reports/stevemadden-insight-brief.md).
+still in stock. These are the latest of the real snapshots the demo replays (3 to 8 Oct, 6 or 7 per
+store), so the demo opens with history: changes, trends and "selling fast". How the numbers were
+checked, and a back-test of "selling fast" over those days, are in
+[`docs/ACCURACY.md`](docs/ACCURACY.md). A sample brief from a one-off command-line scan of the first
+recording (3 Oct) is in [`reports/stevemadden-insight-brief.md`](reports/stevemadden-insight-brief.md).
 
 ## Who it's for
 
@@ -37,7 +40,7 @@ merchant version.
 Requirements: **Java 21**. Node is downloaded by the build; no database to install.
 
 ```bash
-# Offline demo: three recorded stores, no network needed
+# Offline demo: three recorded stores with 5 days of history, no network needed
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=demo
 
 # Live: add any standard Shopify store from the dashboard

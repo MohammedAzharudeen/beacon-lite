@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { beaconApi } from "../api/beaconApi";
-import type { JobResponse } from "../types/beacon";
+import type { DemoProgress, JobResponse } from "../types/beacon";
 import { useAsync } from "./useAsync";
 
 export const useStores = () => useAsync(() => beaconApi.listStores(), []);
@@ -90,4 +90,44 @@ export function useJob(
   }, [jobId]);
 
   return job;
+}
+
+const DEMO_POLL_MS = 2000;
+
+/**
+ * Progress of the demo data load at startup. Polls while loading and calls {@code onDone} once
+ * when it finishes, so the dashboard can reload the now-complete data.
+ */
+export function useDemoProgress(onDone: () => void) {
+  const [progress, setProgress] = useState<DemoProgress | null>(null);
+  const doneRef = useRef(onDone);
+  doneRef.current = onDone;
+
+  useEffect(() => {
+    let cancelled = false;
+    let wasLoading = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const poll = async () => {
+      try {
+        const p = await beaconApi.demoProgress();
+        if (cancelled) return;
+        setProgress(p);
+        if (p.loading) {
+          wasLoading = true;
+          timer = setTimeout(poll, DEMO_POLL_MS);
+        } else if (wasLoading) {
+          doneRef.current();
+        }
+      } catch {
+        // Progress is a nicety; the dashboard works without it
+      }
+    };
+    poll();
+    return () => {
+      cancelled = true;
+      if (timer) clearTimeout(timer);
+    };
+  }, []);
+
+  return progress;
 }
