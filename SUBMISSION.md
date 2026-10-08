@@ -79,5 +79,5 @@ add any standard Shopify store from the top bar. Demo and live keep separate dat
 - Content rendered only by JavaScript isn't seen; search can't be tested where robots.txt blocks it.
 - Full support for standard Shopify stores; headless and many non-Shopify stores get partial
   results or a clear "not supported" message.
-- Built for Swym's team (any public store, no login). The merchant version would show a store only
+- Built for a super admin (internal team: any public store, no login). The merchant version would show a store only
   its own data.

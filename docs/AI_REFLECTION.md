@@ -47,7 +47,7 @@ whether it was sure.
 
 ## What I decided myself
 
-- **Who it is for:** a tool for Swym's team now; a merchant version that only ever shows a store
+- **Who it is for:** a tool for a super admin (internal team) now; a merchant version that only ever shows a store
   its own data.
 - **What not to do:** no invented numbers, no working around bot checks, no private data, no
   generic AI chat that does arithmetic.

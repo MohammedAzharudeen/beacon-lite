@@ -80,7 +80,7 @@ check), the spec's change log was updated first (v1.4, v1.5).
 
 | My request | Result |
 |---|---|
-| A store's team shouldn't see other stores' data. For now this is a tool for Swym's team; in the merchant version, each store sees only its own data. Document it. | README "Who it's for"; spec v1.4 "Users and access" |
+| A store's team shouldn't see other stores' data. For now this is a tool for a super admin (internal team); in the merchant version, each store sees only its own data. Document it. | README "Who it's for"; spec v1.4 "Users and access" |
 
 ## 6. Design
 

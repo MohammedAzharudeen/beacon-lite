@@ -49,7 +49,7 @@ feature that is opened often but changes nothing gets cut.
 | **4** | **Ask Beacon, inside the merchant's assistant** | Natural-language answers about intent ("what are shoppers waiting for?"), including inside Shopify's Sidekick through an app integration | Distribution where merchants already work, and a hedge against the platform's own assistant. Built on the same verified tools as #1–3, so it comes after them | Partly: Ask Beacon works in the Beacon Lite dashboard, not inside Sidekick |
 | **5** | **Early demand on new launches** | Wishlist momentum in a product's first days, to reorder or move stock before it sells out | High value for fashion and drops, but needs more history and calibration; ranked last because confidence is lowest today | Not built: a "New" signal for recent launches, but no wishlist momentum |
 
-**Also valuable, outside the merchant product:** Beacon Lite as an internal tool for Swym's sales
+**Also valuable, outside the merchant product:** Beacon Lite as a super-admin tool for internal sales
 and customer success teams. A one-page brief on any prospect's store from public data gives the
 first call a concrete finding.
 

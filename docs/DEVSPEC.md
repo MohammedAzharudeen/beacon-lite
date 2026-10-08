@@ -98,7 +98,7 @@ Cut order if time is short (decided): store comparison → GenericAdapter depth 
 
 | | Who | What they can see | How access works |
 |---|---|---|---|
-| **This version (assessment)** | Swym team: sales, customer success | Any public Shopify store | Runs locally, one user, no login |
+| **This version (assessment)** | Super admin (internal team: sales, customer success) | Any public Shopify store | Runs locally, one user, no login |
 | **Merchant version (planned)** | A store's own team | Only their own store | Installing the Swym Shopify app; Shopify OAuth confirms store ownership. A merchant cannot add another store |
 
 - **Why Swym-first:** Beacon reads only public data, so it needs no access to the store. That lets Swym research a prospect before the first conversation ("789 products are missing core sizes; no back-in-stock alerts") and lead with the finding.

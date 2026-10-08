@@ -14,7 +14,7 @@ in the background, showing each step:
 3. Checking store pages (home page, policy or footer pages, search where allowed, sold-out pages)
 4. Building insights
 
-Adding any store is part of this version, which is built for Swym's team. In the merchant version a
+Adding any store is part of this version, which is built for a super admin (internal team). In the merchant version a
 store's team sees only their own store and cannot add others.
 
 The store is re-checked every 6 hours (not in demo mode, which replays the recordings). **Refresh now** starts a check straight away; if one is
